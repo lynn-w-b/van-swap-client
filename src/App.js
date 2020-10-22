@@ -7,6 +7,7 @@ import { validateSession } from "./services/userService";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
+import Splash from './views/Splash';
 
 class App extends React.Component {
   state = {
@@ -45,6 +46,7 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <nav>
+            {!authenticated && <Link to="/"> Splash </Link>}
             {authenticated && <Link to="/"> Home </Link>}
             {!authenticated && <Link to="/login"> Login </Link>}
             {!authenticated && <Link to="/signup"> Signup </Link>}
@@ -55,6 +57,12 @@ class App extends React.Component {
             )}
           </nav>
           <Switch>
+            <AnonRoute
+              exact path="/"
+              authenticated={authenticated}
+              authenticate={this.authenticate}
+              component={Splash}
+              />
             <PrivateRoute
               exact
               path="/"
@@ -77,7 +85,7 @@ class App extends React.Component {
               component={Signup}
             />
           </Switch>
-        </BrowserRouter>
+        </BrowserRouter> 
       </div>
     );
   }
