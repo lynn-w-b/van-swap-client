@@ -6,6 +6,8 @@ class Signup extends React.Component {
     username: "",
     email: "",
     password: "",
+    about:"",
+    image:"",
     errorMessage: "",
   };
   handleChange = (event) => {
@@ -21,6 +23,8 @@ class Signup extends React.Component {
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
+      about: this.state.about,
+      image: this.state.image
     })
       .then((response) =>
         response.accessToken
@@ -35,7 +39,7 @@ class Signup extends React.Component {
   };
 
   render() {
-    const { username, email, password, errorMessage } = this.state;
+    const { username, email, password, about, image, errorMessage } = this.state;
     return (
       <div>
         {errorMessage !== "" && errorMessage}
@@ -63,6 +67,23 @@ class Signup extends React.Component {
             value={password}
             onChange={this.handleChange}
             required={true}
+          />
+          <label>About Me: </label>
+          <textarea
+          rows="5"
+          cols="25"
+          name="about"
+          value={about}
+          onChange={this.handleChange}
+          required={true}
+          />
+          <label>Image: </label>
+          <input
+          name="image"
+          type="file"
+          value={image}
+          onChange={this.handleChange}
+          required={true}
           />
           <button type="submit"> Sign up </button>
         </form>
