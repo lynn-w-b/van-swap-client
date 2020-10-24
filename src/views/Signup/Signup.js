@@ -1,14 +1,16 @@
 import React from "react";
-import { signup } from "../services/userService";
-import NavBarBlank from '../components/NavBarBlank';
-import Footer from '../components/Footer';
+import { signup } from "../../services/userService";
+import NavBarBlank from '../../components/NavBarBlank/NavBarBlank';
+import Footer from '../../components/Footer/Footer';
 import './Signup.css';
 
 class Signup extends React.Component {
   state = {
-    username: "",
+    fullname: "",
     email: "",
     password: "",
+    dateofbirth:"",
+    location: "",
     about:"",
     image:"",
     errorMessage: "",
@@ -23,11 +25,13 @@ class Signup extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     signup({
-      username: this.state.username,
+      fullname: this.state.fullname,
       email: this.state.email,
       password: this.state.password,
+      dateofbirth: this.state.dateofbirth,
+      location: this.state.location,
       about: this.state.about,
-      image: this.state.image
+      // image: this.state.image
     })
       .then((response) =>
         response.accessToken
@@ -42,7 +46,7 @@ class Signup extends React.Component {
   };
 
   render() {
-    const { username, email, password, about, image, errorMessage } = this.state;
+    const { fullname, email, password, dateofbirth, location, about, image, errorMessage } = this.state;
     return (
       <div>
       <NavBarBlank></NavBarBlank>
@@ -52,10 +56,10 @@ class Signup extends React.Component {
       <div className="signup">
         {errorMessage !== "" && errorMessage}
         <form className="signupform" onSubmit={this.handleSubmit}>
-          <label className="signuplabel">Username </label>
+          <label className="signuplabel">Full Name </label>
           <input className="signupinput"
-            name="username"
-            value={username}
+            name="fullname"
+            value={fullname}
             onChange={this.handleChange}
             required={true}
             type="text"
@@ -76,6 +80,22 @@ class Signup extends React.Component {
             onChange={this.handleChange}
             required={true}
           />
+          <label className="signuplabel">Date of Birth </label>
+          <input className="signupinput"
+            name="dateofbirth"
+            value={dateofbirth}
+            onChange={this.handleChange}
+            required={true}
+            type="text"
+          />
+          <label className="signuplabel">Location </label>
+          <input className="signupinput"
+            name="location"
+            value={location}
+            onChange={this.handleChange}
+            required={true}
+            type="text"
+          />
           <label className="signuplabel">About Me </label>
           <textarea className="signuptextarea"
           rows="15"
@@ -85,14 +105,14 @@ class Signup extends React.Component {
           onChange={this.handleChange}
           required={true}
           />
-          <label className="signuplabel">Image </label>
+          {/* <label className="signuplabel">Image </label>
           <input className="signupinput"
           name="image"
           type="file"
           value={image}
           onChange={this.handleChange}
           required={true}
-          />
+          /> */}
           <button className="signupbutton" type="submit"> Sign up </button>
         </form>
         </div>

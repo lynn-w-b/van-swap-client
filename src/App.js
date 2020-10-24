@@ -4,13 +4,13 @@ import "./App.css";
 import AnonRoute from "./components/auth/AnonRoute";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import { validateSession } from "./services/userService";
-import Home from "./views/Home";
-import Login from "./views/Login";
-import Signup from "./views/Signup";
-import About from "./views/About";
-import Splash from "./components/Splash";
-import FAQ from "./views/FAQ";
-import Contact from "./views/Contact";
+import Home from "./views/Home/Home";
+import Login from "./views/Login/Login";
+import Signup from "./views/Signup/Signup";
+import About from "./views/About/About";
+import Splash from "./views/Splash/Splash";
+import FAQ from "./views/FAQ/FAQ";
+import Contact from "./views/Contact/Contact";
 
 class App extends React.Component {
   state = {

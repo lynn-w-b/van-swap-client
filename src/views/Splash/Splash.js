@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link} from 'react-router-dom';
 import './Splash.css';
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer/Footer";
 
 const Splash = () => {
   return (

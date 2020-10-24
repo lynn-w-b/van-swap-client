@@ -1,6 +1,6 @@
 import React from "react";
-import { login } from "../services/userService";
-import Footer from '../components/Footer';
+import { login } from "../../services/userService";
+import Footer from '../../components/Footer/Footer';
 import './Login.css';
 
 class Login extends React.Component {

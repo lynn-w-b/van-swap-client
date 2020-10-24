@@ -10,9 +10,9 @@ export const validateSession = (accessToken) => {
     .then((response) => response.data)
     .catch((err) => err);
 };
-export const signup = ({ username, email, password }) => {
+export const signup = ({ fullname, email, password, dateofbirth, location, about }) => {
   return service
-    .post("/user/signup", { username, email, password })
+    .post("/user/signup", { fullname, email, password, dateofbirth, location, about })
     .then((response) => response.data)
     .catch((err) => err);
 };
