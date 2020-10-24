@@ -1,0 +1,22 @@
+.splash-nav {
+    background-color: #F2994A;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+nav button {
+    background-color:#4F4F4F;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    padding: 1vh 2vw 2.5vh 2.5vw;
+    margin: 4vh 2vw 2vh 2vw;
+    border: solid 0.3em #4F4F4F;
+    border-radius: 0.75em;
+}
+.splash-image {
+    width: 100vw;
+}

@@ -1,5 +1,8 @@
 import React from "react";
 import { signup } from "../services/userService";
+import NavBarBlank from '../components/NavBarBlank';
+import Footer from '../components/Footer';
+import './Signup.css';
 
 class Signup extends React.Component {
   state = {
@@ -42,51 +45,58 @@ class Signup extends React.Component {
     const { username, email, password, about, image, errorMessage } = this.state;
     return (
       <div>
+      <NavBarBlank></NavBarBlank>
+      <div className="titlecontainer">
+          <h1>Your Profile</h1>
+        </div>
+      <div className="signup">
         {errorMessage !== "" && errorMessage}
-        <form onSubmit={this.handleSubmit}>
-          <label>username: </label>
-          <input
+        <form className="signupform" onSubmit={this.handleSubmit}>
+          <label className="signuplabel">Username </label>
+          <input className="signupinput"
             name="username"
             value={username}
             onChange={this.handleChange}
             required={true}
             type="text"
           />
-          <label>Email: </label>
-          <input
+          <label className="signuplabel">Email </label>
+          <input className="signupinput"
             name="email"
             value={email}
             onChange={this.handleChange}
             required={true}
             type="email"
           />
-          <label>Password: </label>
-          <input
+          <label className="signuplabel">Password </label>
+          <input className="signupinput"
             name="password"
             type="password"
             value={password}
             onChange={this.handleChange}
             required={true}
           />
-          <label>About Me: </label>
-          <textarea
-          rows="5"
+          <label className="signuplabel">About Me </label>
+          <textarea className="signuptextarea"
+          rows="15"
           cols="25"
           name="about"
           value={about}
           onChange={this.handleChange}
           required={true}
           />
-          <label>Image: </label>
-          <input
+          <label className="signuplabel">Image </label>
+          <input className="signupinput"
           name="image"
           type="file"
           value={image}
           onChange={this.handleChange}
           required={true}
           />
-          <button type="submit"> Sign up </button>
+          <button className="signupbutton" type="submit"> Sign up </button>
         </form>
+        </div>
+        <Footer></Footer>
       </div>
     );
   }

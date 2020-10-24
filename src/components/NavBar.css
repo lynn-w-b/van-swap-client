@@ -1,0 +1,33 @@
+.mainnav {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.mainnavimage {
+    border: solid 0.3em #4F4F4F 1em;
+    border-radius: 0.75em;
+    margin-top: 0.7em;
+}
+
+.mainnavbutton {
+    background-color:#F2994A;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    padding: 1em 1em 1em 1em;
+    margin: 2em;
+    border: solid 0.3em #F2994A;
+    border-radius: 0.75em;
+}
+.endnavbutton {
+    background-color:#4F4F4F;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    padding: 1em 1em 1em 1em;
+    margin: 2em;
+    border: solid 0.3em #4F4F4F;
+    border-radius: 0.75em;
+}

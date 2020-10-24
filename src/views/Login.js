@@ -1,5 +1,7 @@
 import React from "react";
 import { login } from "../services/userService";
+import Footer from '../components/Footer';
+import './Login.css';
 
 class Login extends React.Component {
   state = {
@@ -39,26 +41,29 @@ class Login extends React.Component {
     const { email, password, errorMessage } = this.state;
     return (
       <div>
+      <div className="login">
         {errorMessage !== "" && errorMessage}
-        <form onSubmit={this.handleSubmit}>
-          <label>Email: </label>
-          <input
+        <form className="loginform" onSubmit={this.handleSubmit}>
+          <label className="loginlabel">Email </label>
+          <input className="logininput"
             name="email"
             value={email}
             onChange={this.handleChange}
             required={true}
             type="email"
           />
-          <label>Password: </label>
-          <input
+          <label className="loginlabel">Password </label>
+          <input className="logininput"
             name="password"
             type="password"
             value={password}
             onChange={this.handleChange}
             required={true}
           />
-          <button type="submit"> Login </button>
+          <button className="loginbutton" type="submit"> Login </button>
         </form>
+        </div>
+        <Footer></Footer>
       </div>
     );
   }

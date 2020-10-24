@@ -1,0 +1,70 @@
+body {
+    background-color: #F9FAE3;
+}
+.signup {
+    background-color: #F9FAE3;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.titlecontainer {
+    background-color: #4f4f4f;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1em;
+    text-align: left;
+    padding: 1em;
+    width: 74.5vw;
+    margin-left: 11.5vw;
+    border: solid 0.3em #4f4f4f;
+    border-radius: 0.75em;
+}
+.signupform {
+    width: 70vw;
+    background-color:white;
+    color: #4f4f4f;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border: solid 2em #F2994A;
+    border-radius: 0.75em;
+}
+.signuplabel {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5em;
+    text-align: left;
+    padding-bottom: 1em;
+    padding-top: 0;
+}
+
+.signupinput {
+    color: #4f4f4f;
+    width: 60vw;
+    height: 5vh;
+    margin-left: 3vw;
+    margin-bottom: 1em;
+    border: solid 0.3em #F2994A;
+    border-radius: 0.75em;
+}
+
+.signuptextarea {
+    color: #4f4f4f;
+    width: 60vw;
+    margin-left: 3vw;
+    margin-bottom: 1em;
+    border: solid 0.3em #F2994A;
+    border-radius: 0.75em;
+}
+.signupbutton {
+    background-color: #4f4f4f;
+    color: #F2994A;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    width: 10vw;
+    margin-top: 1em;
+    margin-left: 50vw;
+    padding: 1em;
+    border: solid 0.3em #4F4F4F;
+    border-radius: 0.75em;
+}

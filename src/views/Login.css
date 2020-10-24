@@ -1,0 +1,52 @@
+.login {
+    background-color: #F9FAE3;
+    background-image: url('/VanSwapLogo.svg');
+    background-repeat: no-repeat;
+    background-size: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.loginform {
+    width: 20vw;
+    background-color: #4f4f4f;
+    color: white;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border: solid 0.3em #4F4F4F;
+    border-radius: 0.75em;
+    margin: 20vh 10vw;
+    
+}
+
+.loginlabel {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 1em;
+    padding-top: 0;
+}
+.logininput {
+    color: #F2994A;
+    width: 15vw;
+    height: 5vh;
+    margin-left: 3vw;
+    margin-bottom: 1em;
+    border: solid 0.3em #4F4F4F;
+    border-radius: 0.75em;
+}
+.loginbutton {
+    background-color: #F2994A;
+    color: #4f4f4f;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    width: 10vw;
+    margin-top: 1em;
+    margin-left: 6vw;
+    padding: 1em;
+    border: solid 0.3em #4F4F4F;
+    border-radius: 0.75em;
+
+}

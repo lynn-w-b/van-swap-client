@@ -7,7 +7,10 @@ import { validateSession } from "./services/userService";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
-import Splash from './views/Splash';
+import About from "./views/About";
+import Splash from "./components/Splash";
+import FAQ from "./views/FAQ";
+import Contact from "./views/Contact";
 
 class App extends React.Component {
   state = {
@@ -44,46 +47,61 @@ class App extends React.Component {
     const { authenticated } = this.state;
     return (
       <div className="App">
-        <BrowserRouter>
-          <nav>
-            {!authenticated && <Link to="/"> Splash </Link>}
-            {authenticated && <Link to="/"> Home </Link>}
-            {!authenticated && <Link to="/login"> Login </Link>}
-            {!authenticated && <Link to="/signup"> Signup </Link>}
-            {authenticated && (
+      <BrowserRouter>
+        {authenticated && (
               <Link to={"/"} onClick={this.handleLogout}>
-                Logout
+                Log-out
               </Link>
             )}
-          </nav>
           <Switch>
-            <AnonRoute
-              exact path="/"
-              authenticated={authenticated}
-              authenticate={this.authenticate}
-              component={Splash}
-              />
-            <PrivateRoute
+            {authenticated && <PrivateRoute
               exact
               path="/"
               user={this.state.user}
               authenticated={authenticated}
               component={Home}
-            />
-            <AnonRoute
+            />}
+            {!authenticated && <AnonRoute
+              exact path="/"
+              authenticated={authenticated}
+              authenticate={this.authenticate}
+              component={Splash}
+              />}
+            {!authenticated && <AnonRoute
               exact
               path="/login"
               authenticated={authenticated}
               authenticate={this.authenticate}
               component={Login}
-            />
-            <AnonRoute
+            />}
+            {!authenticated && <AnonRoute
               exact
               path="/signup"
               authenticated={authenticated}
               authenticate={this.authenticate}
               component={Signup}
-            />
+            />}
+            {!authenticated && <AnonRoute
+              exact
+              path="/about"
+              authenticated={authenticated}
+              authenticate={this.authenticate}
+              component={About}
+            />}
+            {!authenticated && <AnonRoute
+              exact
+              path="/faq"
+              authenticated={authenticated}
+              authenticate={this.authenticate}
+              component={FAQ}
+            />}
+            {!authenticated && <AnonRoute
+              exact
+              path="/contact"
+              authenticated={authenticated}
+              authenticate={this.authenticate}
+              component={Contact}
+            />}
           </Switch>
         </BrowserRouter> 
       </div>

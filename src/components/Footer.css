@@ -1,0 +1,15 @@
+footer {
+    background-color: #4F4F4F;
+    color: #F2994A;
+    font-family: 'PT Sans', sans-serif;
+    height: 20vh;
+    text-align: center;
+  }
+  
+  footer span {
+    color: greenyellow;
+  }
+  footer p {
+    padding-top: 1.5em;
+  }
+  

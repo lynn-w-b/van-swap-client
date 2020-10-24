@@ -1,0 +1,12 @@
+.nav-bar-blank {
+    background-color: #F9FAE3;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+img {
+    width: 15vw;
+}
+
