@@ -24,7 +24,7 @@ class App extends React.Component {
         .then((response) => {
           console.log(response, "RESPONSE");
           this.authenticate(response.session.userId);
-        })
+        }) 
         .catch((err) => console.log(err));
     }
   };
@@ -32,7 +32,7 @@ class App extends React.Component {
   authenticate = (user) => {
     this.setState({
       authenticated: true,
-      user,
+      user: user
     });
   };
 
@@ -48,8 +48,8 @@ class App extends React.Component {
     return (
       <div className="App">
       <BrowserRouter>
-        {authenticated && (
-              <Link to={"/"} onClick={this.handleLogout}>
+      {authenticated && (
+              <Link to={"/log-out"} onClick={this.handleLogout}>
                 Log-out
               </Link>
             )}
@@ -60,6 +60,13 @@ class App extends React.Component {
               user={this.state.user}
               authenticated={authenticated}
               component={Home}
+            />}
+            {authenticated && <PrivateRoute
+              exact
+              path="/log-out"
+              user={this.state.user}
+              authenticated={authenticated}
+              component={Splash}
             />}
             {!authenticated && <AnonRoute
               exact path="/"

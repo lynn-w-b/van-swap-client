@@ -4,19 +4,20 @@ import Footer from "../../components/Footer/Footer";
 import './Home.css';
 
 const Home = (props) => {
-  const { fullname, dateofbirth, location, about:details } = props.user;
+  console.log(props);
+  const { fullname, dateofbirth, location, about } = props.user;
   return (
     <div>
     <NavBar button1="My Van" link1="/myvan" button2="Search Vans" link2="/allvans" button3="Log-out" Link3="/log-out"></NavBar>
     <div className="titlecontainer">
-      <h1>My Profile {fullname && props.user.username}</h1>
+      <h1>My Profile {fullname && props.user.fullname}</h1>
       <button className="editbutton"><img src="/2_-_1_-_Pencil.jpg" alt="Edit profile"/></button>
     </div>
     <div className="textbox">
-      <p>Name: {fullname}</p>
-      <p>DOB: {dateofbirth}</p>
-      <p>Location: {location}</p>
-      <p>Details: {details}</p>
+      <p>Name: {fullname && props.user.fullname}</p>
+      <p>DOB: {dateofbirth && props.user.dateofbirth}</p>
+      <p>Location: {location && props.user.location}</p>
+      <p>Details: {about && props.user.about}</p>
     </div>
     <div className="titlecontainer">
       <h1>Swap Requests</h1>

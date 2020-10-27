@@ -1,13 +1,20 @@
 import React from "react";
-import { login } from "../../services/userService";
+import { logout } from "../../services/userService";
 import Footer from '../../components/Footer/Footer';
-import './Login.css';
+import './Logout.css';
 
-class Login extends React.Component {
+class Logout extends React.Component {
   state = {
     email: "",
     password: "",
     errorMessage: "",
+  };
+  handleLogout = () => {
+    localStorage.clear();
+    this.setState({
+      authenticated: false,
+      user: {},
+    });
   };
   handleChange = (event) => {
     const { name, value } = event.target;

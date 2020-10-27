@@ -14,7 +14,7 @@ export const signup = ({ fullname, email, password, dateofbirth, location, about
   return service
     .post("/user/signup", { fullname, email, password, dateofbirth, location, about })
     .then((response) => response.data)
-    .catch((err) => err);
+    .catch((err) => err)
 };
 
 export const login = ({ email, password }) => {
@@ -25,3 +25,10 @@ export const login = ({ email, password }) => {
       console.log(err);
     });
 };
+
+export const logout = (accessToken) => {
+  return service
+  .delete(`/user/session${accessToken}`)
+  .then(response => response.data)
+  .catch(err => console.log(err))
+}

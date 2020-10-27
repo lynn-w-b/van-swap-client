@@ -12,7 +12,7 @@ class Signup extends React.Component {
     dateofbirth:"",
     location: "",
     about:"",
-    image:"",
+    // image:"",
     errorMessage: "",
   };
   handleChange = (event) => {
@@ -46,7 +46,7 @@ class Signup extends React.Component {
   };
 
   render() {
-    const { fullname, email, password, dateofbirth, location, about, image, errorMessage } = this.state;
+    const { fullname, email, password, dateofbirth, location, about, errorMessage } = this.state;
     return (
       <div>
       <NavBarBlank></NavBarBlank>
