@@ -1,6 +1,17 @@
+.titlecontainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10vh;
+}
+
 .editbutton {
     width: 5vw;
+    height: 15vh;
     padding: 0.2em;
     border: solid white 0.1em;
     border-radius: 0.75em;
+    margin-left: 60vw;
+}
+.editbutton img {
+    width: 4vw;
 }

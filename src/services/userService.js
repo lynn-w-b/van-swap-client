@@ -26,9 +26,10 @@ export const login = ({ email, password }) => {
     });
 };
 
-export const logout = (accessToken) => {
+export const logout = ({accessToken}) => {
+  console.log("userservice being triggered", accessToken);
   return service
-  .delete(`/user/session${accessToken}`)
-  .then(response => response.data)
-  .catch(err => console.log(err))
+  .post("/user/logout", {accessToken})
+  .then((response) => response.data)
+  .catch((err) => console.log(err))
 }

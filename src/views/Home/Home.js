@@ -8,9 +8,9 @@ const Home = (props) => {
   const { fullname, dateofbirth, location, about } = props.user;
   return (
     <div>
-    <NavBar button1="My Van" link1="/myvan" button2="Search Vans" link2="/allvans" button3="Log-out" Link3="/log-out"></NavBar>
+    <NavBar button1="My Van" link1="/myvan" button2="Search Vans" link2="/allvans" button3="Log-out" link3="/logout"></NavBar>
     <div className="titlecontainer">
-      <h1>My Profile {fullname && props.user.fullname}</h1>
+      <h1>My Profile</h1>
       <button className="editbutton"><img src="/2_-_1_-_Pencil.jpg" alt="Edit profile"/></button>
     </div>
     <div className="textbox">

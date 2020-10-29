@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import "./App.css";
 import AnonRoute from "./components/auth/AnonRoute";
 import PrivateRoute from "./components/auth/PrivateRoute";
@@ -11,6 +11,7 @@ import About from "./views/About/About";
 import Splash from "./views/Splash/Splash";
 import FAQ from "./views/FAQ/FAQ";
 import Contact from "./views/Contact/Contact";
+import Logout from "./views/Logout/Logout";
 
 class App extends React.Component {
   state = {
@@ -37,6 +38,7 @@ class App extends React.Component {
   };
 
   handleLogout = () => {
+    console.log("I have been clicked!!");
     localStorage.clear();
     this.setState({
       authenticated: false,
@@ -48,11 +50,6 @@ class App extends React.Component {
     return (
       <div className="App">
       <BrowserRouter>
-      {authenticated && (
-              <Link to={"/log-out"} onClick={this.handleLogout}>
-                Log-out
-              </Link>
-            )}
           <Switch>
             {authenticated && <PrivateRoute
               exact
@@ -61,12 +58,14 @@ class App extends React.Component {
               authenticated={authenticated}
               component={Home}
             />}
-            {authenticated && <PrivateRoute
+            {<PrivateRoute
               exact
-              path="/log-out"
+              path="/logout"
               user={this.state.user}
               authenticated={authenticated}
-              component={Splash}
+              accessToken={localStorage.getItem("accessToken")}
+              handleLogout={this.handleLogout}
+              component={Logout}
             />}
             {!authenticated && <AnonRoute
               exact path="/"

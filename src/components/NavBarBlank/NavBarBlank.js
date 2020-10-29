@@ -1,12 +1,15 @@
 import React from "react";
+import { Route, Link} from 'react-router-dom';
 import './NavBarBlank.css';
 
 const NavBarBlank = () => {
   return (
     <div>
+    <Route>
         <nav className="nav-bar-blank">
-            <img src='/VanSwapLogo.svg' alt="Van Swap Logo"/>
+        <Link to={"/"} style={{'textDecoration':'none', 'color':'white'}}><img src='/VanSwapLogo.svg' alt="Van Swap Logo"/></Link>
         </nav>
+    </Route>
     </div>
   );
 };

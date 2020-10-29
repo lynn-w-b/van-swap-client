@@ -10,7 +10,7 @@ const NavBar = (props) => {
     <Route>
     <nav className="mainnav">
         <div>
-        <img className="mainnavimage" src='/VanSwapLogo.svg' alt="Van Swap Logo"/>
+        <Link to={"/"} style={{'textDecoration':'none', 'color':'white'}}><img className="mainnavimage" src='/VanSwapLogo.svg' alt="Van Swap Logo"/></Link>
         </div>
         <div className="buttons">
         <button className="mainnavbutton"><Link to={link1} style={{'textDecoration':'none', 'color':'white'}}>{button1}</Link></button>

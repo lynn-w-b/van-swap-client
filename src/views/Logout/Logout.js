@@ -1,78 +1,45 @@
 import React from "react";
+import {Route, Link} from "react-router-dom";
 import { logout } from "../../services/userService";
 import Footer from '../../components/Footer/Footer';
 import './Logout.css';
 
 class Logout extends React.Component {
   state = {
-    email: "",
-    password: "",
+    accessToken: this.props.accessToken,
     errorMessage: "",
-  };
-  handleLogout = () => {
-    localStorage.clear();
-    this.setState({
-      authenticated: false,
-      user: {},
-    });
-  };
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    login({
-      email: this.state.email,
-      password: this.state.password,
+    logout({
+      accessToken: this.state.accessToken
     })
       .then((response) =>
-        response.accessToken
-          ? (localStorage.setItem("accessToken", response.accessToken),
-            this.props.authenticate(response.user),
-            this.props.history.push("/"))
-          : this.setState({
-              errorMessage: response.errorMessage,
-            })
+        this.props.handleLogout()
       )
       .catch((err) => {
         console.log(err);
       });
   };
-
-  render() {
-    const { email, password, errorMessage } = this.state;
+  render () {
+    console.log(this.props);
+    const {errorMessage} = this.state;
     return (
       <div>
       <div className="login">
         {errorMessage !== "" && errorMessage}
         <form className="loginform" onSubmit={this.handleSubmit}>
-          <label className="loginlabel">Email </label>
-          <input className="logininput"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-            required={true}
-            type="email"
-          />
-          <label className="loginlabel">Password </label>
-          <input className="logininput"
-            name="password"
-            type="password"
-            value={password}
-            onChange={this.handleChange}
-            required={true}
-          />
-          <button className="loginbutton" type="submit"> Login </button>
+          <p className="exittext">Are you sure you would like to log-out?</p>
+          <button className="loginbutton" type="submit"> Log-out </button>
+          <Route>
+          <Link to={"/"} style={{'textDecoration':'none', 'color':'white', 'textAlign':'center'}}>Back</Link>
+          </Route>
         </form>
         </div>
         <Footer></Footer>
       </div>
     );
-  }
-}
+}}
 
-export default Login;
+export default Logout;

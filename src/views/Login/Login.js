@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Link } from "react-router-dom";
 import { login } from "../../services/userService";
 import Footer from '../../components/Footer/Footer';
 import './Login.css';
@@ -9,6 +10,13 @@ class Login extends React.Component {
     password: "",
     errorMessage: "",
   };
+
+  // handleClick = (event) => {
+  //   this.setState({
+  //     email:""
+  //   });
+  // };
+
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -60,6 +68,9 @@ class Login extends React.Component {
             required={true}
           />
           <button className="loginbutton" type="submit"> Login </button>
+          <Route>
+        <Link to={"/"} style={{'textDecoration':'none', 'color':'white', 'textAlign':'center'}}>Back</Link>
+        </Route>
         </form>
         </div>
         <Footer></Footer>

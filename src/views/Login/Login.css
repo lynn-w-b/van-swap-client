@@ -44,9 +44,20 @@
     font-size: 1.5em;
     width: 10vw;
     margin-top: 1em;
-    margin-left: 6vw;
+    margin-left: 5.5vw;
     padding: 1em;
     border: solid 0.3em #4F4F4F;
     border-radius: 0.75em;
-
+}
+.backbutton {
+    background-color: #F9FAE3;
+    color: #4f4f4f;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    width: 10vw;
+    margin-top: 1em;
+    margin-left: 74vw;
+    padding: 1em;
+    border: solid 0.3em #4F4F4F;
+    border-radius: 0.75em;
 }
