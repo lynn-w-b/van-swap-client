@@ -6,8 +6,7 @@
     justify-content: space-around;
 }
 .mainnavimage {
-    border: solid 0.3em #4F4F4F 1em;
-    border-radius: 0.75em;
+    border: none;
     margin-top: 0.7em;
 }
 

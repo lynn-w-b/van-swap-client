@@ -12,11 +12,13 @@ import Splash from "./views/Splash/Splash";
 import FAQ from "./views/FAQ/FAQ";
 import Contact from "./views/Contact/Contact";
 import Logout from "./views/Logout/Logout";
+import NewVanForm from "./components/NewVanForm/newVanForm";
+import MyVan from "./views/myVan/myVan";
 
 class App extends React.Component {
   state = {
     authenticated: false,
-    user: {},
+    user: {}
   };
   componentDidMount = () => {
     const accessToken = localStorage.getItem("accessToken");
@@ -57,6 +59,18 @@ class App extends React.Component {
               user={this.state.user}
               authenticated={authenticated}
               component={Home}
+            />}
+            {<PrivateRoute
+            exact path="/newvan"
+            user={this.state.user}
+            authenticated={authenticated}
+            component={NewVanForm}
+            />}
+            {<PrivateRoute
+            exact path="/myvan"
+            user={this.state.user}
+            authenticated={authenticated}
+            component={MyVan}
             />}
             {<PrivateRoute
               exact

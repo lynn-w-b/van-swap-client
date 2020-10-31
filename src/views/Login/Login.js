@@ -33,6 +33,7 @@ class Login extends React.Component {
       .then((response) =>
         response.accessToken
           ? (localStorage.setItem("accessToken", response.accessToken),
+            localStorage.setItem("van", response.van),
             this.props.authenticate(response.user),
             this.props.history.push("/"))
           : this.setState({

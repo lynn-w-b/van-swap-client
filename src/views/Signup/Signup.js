@@ -36,8 +36,10 @@ class Signup extends React.Component {
       .then((response) =>
         response.accessToken
           ? (localStorage.setItem("accessToken", response.accessToken),
+            localStorage.setItem("van", response.van),
+            console.log("van details", response.van),
             this.props.authenticate(response.user),
-            this.props.history.push("/"))
+            this.props.history.push("/newvan"))
           : this.setState({
               errorMessage: response.errorMessage,
             })
