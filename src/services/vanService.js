@@ -14,9 +14,9 @@ export const newvan = ({ user, make, model, year, location, about }) => {
 };
 
 export const getvan = ({ user }) => {
-    console.log("getvan, user=", user)
+    console.log("getvan, van=", user.van)
     return service
-    .get(`/myvan/:${user.van}`)
+    .get(`van/myvan/${user.van}`)
     .then((response) => response.data)
     .catch((err) => {
         console.log(err);

@@ -5,17 +5,37 @@ import Footer from "../../components/Footer/Footer";
 import './myVan.css';
 import {getvan} from "../../services/vanService";
 
+class MyVan extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      user: this.props.user,
+      van: {make:'Please enter the make of your van',
+            model:'Please enter the model of your van',
+            year:'Please enter the year of your van',
+            location:'Please enter the location of your van',
+            about:'Please enter additional information about your van'}
+    }
+  }
+
 componentDidMount = () => {
-    if (this.props.user) {
-      getvan(this.props.user)
+    if (this.state.user) {
+      console.log("User for my van is: ", this.state.user )
+      getvan({user:this.state.user})
         .then((response) => {
-                const {van} = response.van;
-              })
-        .catch((err) => console.log(err));
+          console.log("Response from getvan service is:", response)
+                this.setState({
+                  van: {make: response.Van.make,
+                  model: response.Van.model,
+                year: response.Van.year,
+              location: response.Van.location,
+            about: response.Van.about}
+              });
+            })
+        .catch((err) => console.log(err))
             }}
 
-const MyVan = (props) => {
-    
+  render() {
   return (
     <div>
     <NavBarBlank></NavBarBlank>
@@ -26,11 +46,11 @@ const MyVan = (props) => {
       </Route>
     </div>
     <div className="textbox">
-      <p>Make: {van.make}</p>
-      <p>Model: {van.model}</p>
-      <p>Year: {van.year}</p>
-      <p>Location: {van.location}</p>
-      <p>Details: {van.about}</p>
+      <p>Make: {this.state.van.make}</p>
+      <p>Model: {this.state.van.model}</p>
+      <p>Year: {this.state.van.year}</p>
+      <p>Location: {this.state.van.location}</p>
+      <p>Details: {this.state.van.about}</p>
     {/* <p>Make: {make && props.van.makeandmodel}</p>
       <p>Year: {year && props.van.year}</p>
       <p>Location: {location && props.van.location}</p>
@@ -39,6 +59,7 @@ const MyVan = (props) => {
     <Footer></Footer>
     </div>
   );
+    };
 };
 
 export default MyVan;
