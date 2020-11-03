@@ -55,3 +55,10 @@ export const deletevan = ({id}) => {
     .then((response) => response.data)
     .catch((err) => console.log(err))
   }
+
+export const allvans = () => {
+    return service
+    .get('/van/allvans')
+    .then((response) => response.data)
+    .catch((err) => console.log(err))
+}

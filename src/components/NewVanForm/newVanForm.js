@@ -53,7 +53,7 @@ class NewVanForm extends React.Component {
     <div className="titlecontainer">
       <h1>New Van</h1>
     </div>
-    <div className="textbox">
+    <div className="signup">
     {errorMessage !== "" && errorMessage}
           <form className="signupform" onSubmit={this.handleSubmit}>
             <label className="signuplabel">Make </label>

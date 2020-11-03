@@ -18,6 +18,7 @@ import EditProfile from "./components/EditProfile/editProfile";
 import EditVan from "./components/EditVan/editVan";
 import DeleteVan from "./components/DeleteVan/deleteVan";
 import DeleteProfile from "./components/DeleteProfile/deleteProfile";
+import AllVans from "./views/AllVans/allVans";
 
 
 class App extends React.Component {
@@ -114,6 +115,12 @@ class App extends React.Component {
             user={this.state.user}
             authenticated={authenticated}
             component={DeleteVan}
+            />}
+            {<PrivateRoute
+            exact path="/allvans"
+            user={this.state.user}
+            authenticated={authenticated}
+            component={AllVans}
             />}
             {!authenticated && <AnonRoute
               exact path="/"
