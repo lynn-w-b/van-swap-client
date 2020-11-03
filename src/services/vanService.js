@@ -23,16 +23,35 @@ export const getvan = ({ user }) => {
     });
 };
 
-export const editvan = ({_id}) => {
+export const editvan = ({
+  id,
+  make,
+  model,
+  year,
+  location,
+  about}) => {
+  console.log("editvan being triggered", 
+  id, 
+  make,
+  model,
+  year,
+  location,
+  about);
   return service
-  .post("/van/edit", {_id})
+  .post(`/van/editvan/${id}`, 
+    {id, 
+    make,
+    model,
+    year,
+    location,
+    about})
   .then((response) => response.data)
   .catch((err) => console.log(err))
 }
 
-export const deletevan = ({_id}) => {
+export const deletevan = ({id}) => {
     return service
-    .post("/van/delete", {_id})
+    .delete(`/van/delete/${id}`)
     .then((response) => response.data)
     .catch((err) => console.log(err))
   }

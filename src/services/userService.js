@@ -32,4 +32,47 @@ export const logout = ({accessToken}) => {
   .post("/user/logout", {accessToken})
   .then((response) => response.data)
   .catch((err) => console.log(err))
+};
+
+export const editprofile = ({
+  id,
+  fullname,
+  email,
+  password,
+  dateofbirth,
+  location,
+  about}) => {
+  console.log("editprofile being triggered", 
+  id, 
+  fullname,
+  email,
+  password,
+  dateofbirth,
+  location,
+  about);
+  return service
+  .post(`/user/editprofile/${id}`, 
+    {id, 
+    fullname,
+    email,
+    password,
+    dateofbirth,
+    location,
+    about})
+  .then((response) => response.data)
+  .catch((err) => console.log(err))
+};
+
+export const deleteuser = ({id}) => {
+  return service
+  .delete(`/user/delete/${id}`)
+  .then((response) => response.data)
+  .catch((err) => console.log(err))
+};
+
+export const deletesession = ({id}) => {
+  return service
+  .delete(`user/delete/session/${id}`)
+  .then((response) => response.data)
+  .catch((err) => console.log(err))
 }

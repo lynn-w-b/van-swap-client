@@ -14,6 +14,11 @@ import Contact from "./views/Contact/Contact";
 import Logout from "./views/Logout/Logout";
 import NewVanForm from "./components/NewVanForm/newVanForm";
 import MyVan from "./views/myVan/myVan";
+import EditProfile from "./components/EditProfile/editProfile";
+import EditVan from "./components/EditVan/editVan";
+import DeleteVan from "./components/DeleteVan/deleteVan";
+import DeleteProfile from "./components/DeleteProfile/deleteProfile";
+
 
 class App extends React.Component {
   state = {
@@ -29,6 +34,11 @@ class App extends React.Component {
           this.authenticate(response.session.userId);
         }) 
         .catch((err) => console.log(err));
+    } else {
+      this.setState({
+        authenticated: false,
+        user: {}
+      })
     }
   };
 
@@ -80,6 +90,30 @@ class App extends React.Component {
               accessToken={localStorage.getItem("accessToken")}
               handleLogout={this.handleLogout}
               component={Logout}
+            />}
+            {<PrivateRoute
+            exact path="/editprofile"
+            user={this.state.user}
+            authenticated={authenticated}
+            component={EditProfile}
+            />}
+            {<PrivateRoute
+            exact path="/deleteprofile"
+            user={this.state.user}
+            authenticated={authenticated}
+            component={DeleteProfile}
+            />}
+            {<PrivateRoute
+            exact path="/editvan"
+            user={this.state.user}
+            authenticated={authenticated}
+            component={EditVan}
+            />}
+            {<PrivateRoute
+            exact path="/deletevan"
+            user={this.state.user}
+            authenticated={authenticated}
+            component={DeleteVan}
             />}
             {!authenticated && <AnonRoute
               exact path="/"

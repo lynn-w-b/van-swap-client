@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Link} from 'react-router-dom';
-import NavBarBlank from "../../components/NavBarBlank/NavBarBlank";
+import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import './myVan.css';
 import {getvan} from "../../services/vanService";
@@ -25,7 +25,8 @@ componentDidMount = () => {
         .then((response) => {
           console.log("Response from getvan service is:", response)
                 this.setState({
-                  van: {make: response.Van.make,
+                  van: 
+                  {make: response.Van.make,
                   model: response.Van.model,
                 year: response.Van.year,
               location: response.Van.location,
@@ -38,7 +39,7 @@ componentDidMount = () => {
   render() {
   return (
     <div>
-    <NavBarBlank></NavBarBlank>
+    <NavBar button1="My Profile" link1="/" button2="Search Vans" link2="/allvans" button3="Log-out" link3="/logout"></NavBar>
     <div className="titlecontainer">
       <h1>My Van</h1>
       <Route>

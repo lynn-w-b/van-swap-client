@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Link} from 'react-router-dom';
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import './Home.css';
@@ -11,7 +12,9 @@ const Home = (props) => {
     <NavBar button1="My Van" link1="/myvan" button2="Search Vans" link2="/allvans" button3="Log-out" link3="/logout"></NavBar>
     <div className="titlecontainer">
       <h1>My Profile</h1>
-      <button className="editbutton"><img src="/2_-_1_-_Pencil.jpg" alt="Edit profile"/></button>
+      <Route>
+      <Link to={"/editprofile"} style={{'textDecoration':'none', 'color':'white'}}><button className="editbutton"><img src="/2_-_1_-_Pencil.jpg" alt="Edit profile"/></button></Link>
+      </Route>
     </div>
     <div className="textbox">
       <p>Name: {fullname && props.user.fullname}</p>
