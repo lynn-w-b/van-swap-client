@@ -1,0 +1,12 @@
+.vanviewbox {
+    width: 71.5vw;
+    height: 75vh;
+    margin-left: 9.5vw;
+    margin-top: 2vh;
+    background-color:white;
+    color: #4f4f4f;
+    padding: 1em;
+    border: solid 2em #F2994A;
+    border-radius: 0.75em;
+    text-align: left;
+}
