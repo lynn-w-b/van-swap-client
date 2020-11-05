@@ -35,6 +35,7 @@ class AllVans extends React.Component {
     return this.state.vans.filter(van => van.location.toLowerCase().includes(this.state.inputValue.toLowerCase()));
   };
 
+
   render() {
     const vans = this.dynamicSearch().map((van) => (
       <VanView
@@ -43,6 +44,8 @@ class AllVans extends React.Component {
         model={van.model}
         year={van.year}
         location={van.location}
+        key={van._id}
+        van_id={van._id}
       ></VanView>
     ));
 
@@ -70,8 +73,7 @@ class AllVans extends React.Component {
         <ul>{vans}</ul>
         <Footer></Footer>
       </div>
-    );
+)};
   }
-}
 
 export default AllVans;

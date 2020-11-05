@@ -63,10 +63,10 @@ export const allvans = () => {
     .catch((err) => console.log(err))
 };
 
-export const vandetails = ({ id }) => {
-  console.log("vandetails, van=", id)
+export const vandetails = ({ _id }) => {
+  console.log("vandetails, van=", _id)
   return service
-  .get(`van/details/${id}`)
+  .get(`van/details/${_id}`)
   .then((response) => response.data)
   .catch((err) => {
       console.log(err);

@@ -124,9 +124,10 @@ class App extends React.Component {
             component={AllVans}
             />}
             {<PrivateRoute
-            exact path="/details/:id"
+            exact path="/vandetails"
             user={this.state.user}
             authenticated={authenticated}
+            id={localStorage.getItem("van_id")}
             component={VanDetails}
             />}
             {!authenticated && <AnonRoute

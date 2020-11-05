@@ -48,7 +48,7 @@ class EditProfile extends React.Component {
    }
 
   render() {
-    const { fullname, email, password, dateofbirth, location, about, errorMessage } = this.state;
+    const { fullname, email, dateofbirth, location, about, errorMessage } = this.state;
   return (
     <div>
     <NavBar button1="Back" link1="/" button2="Delete Profile" link2="/deleteprofile" button3="Log-out" link3="/logout"></NavBar>

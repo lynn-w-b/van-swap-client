@@ -75,4 +75,11 @@ export const deletesession = ({id}) => {
   .delete(`user/delete/session/${id}`)
   .then((response) => response.data)
   .catch((err) => console.log(err))
-}
+};
+
+// export const getuserdetails = ({id}) => {
+//   return service
+//   .get(`user/getdetails/${id}`)
+//   .then((response) => response.data)
+//   .catch((err) => console.log(err))
+// }
