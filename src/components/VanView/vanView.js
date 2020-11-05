@@ -3,28 +3,23 @@ import { Route, Link} from 'react-router-dom';
 import './vanView.css';
 
 class VanView extends React.Component {
-    constructor({_id, make, model, year, location, van_id}) {
-        super(_id, make, model, year, location, van_id);
+    constructor(props) {
+        super(props);
         this.state = {
-          _id,
-          make,
-          model,
-          year,
-          location, 
-          van_id
+          _id: this.props._id,
+          make: this.props.make,
+          model: this.props.model,
+          year: this.props.year,
+          location: this.props.location
         };
       };
 
-onClickHandler = () => {
-  localStorage.setItem("van_id", this.state.van_id);
-};
-
 render () {
-const {make, model, year, location} = this.state;
+const {_id, make, model, year, location} = this.state;
   return (
     <div>
     <Route>
-        <Link to={'/vandetails'} style={{'textDecoration':'none', 'color':'white'}} onClick={this.onClickHandler}>
+        <Link to={`/vandetails/${_id}`} style={{'textDecoration':'none', 'color':'white'}}>
         <div className="vanviewbox">
             <p>Make: {make && this.state.make}</p>
             <p>Model: {model && this.state.model}</p>

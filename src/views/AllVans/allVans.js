@@ -45,7 +45,6 @@ class AllVans extends React.Component {
         year={van.year}
         location={van.location}
         key={van._id}
-        van_id={van._id}
       ></VanView>
     ));
 
