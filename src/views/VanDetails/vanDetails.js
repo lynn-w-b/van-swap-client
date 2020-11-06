@@ -17,9 +17,10 @@ const VanDetails =(props) => {
   const [about, setAbout] = useState('');
   const [fullname, setFullname] = useState('');
   const [details, setDetails] = useState('');
+  const [ownerId, setOwnerId] = useState({});
 
  useEffect (() => {
-      vandetails({_id: id})
+      vandetails({id})
         .then((response) => {
           console.log("Response from vandetails service is:", response);
           setMake(response.Van.make);
@@ -29,9 +30,16 @@ const VanDetails =(props) => {
           setAbout(response.Van.about);
           setFullname(response.Van.owner.fullname);
           setDetails(response.Van.owner.about);
+          setOwnerId(response.Van.owner._id);
           })
         .catch((err) => console.log(err))
             });
+  
+const onClickHandler = () => {
+  console.log(`vanowner:${ownerId}, van:${id}`);
+    localStorage.setItem("vanowner", ownerId);
+    localStorage.setItem("van_id", id);
+  }
 
   
   return (
@@ -40,7 +48,7 @@ const VanDetails =(props) => {
     <Route>
     <div className="titlecontainer">
       <h1>Van Details</h1>
-      <Link to={"/swaprequest"} style={{'textDecoration':'none', 'color':'white'}}><button className="editbutton">Make A Swap Request</button></Link>
+      <Link to={`/swaprequest/${id}`} style={{'textDecoration':'none', 'color':'white'}} onClick={onClickHandler()}><button className="editbutton" type="submit">Make A Swap Request</button></Link>
     </div>
     <div className="textbox">
       <p>Make: {make}</p>

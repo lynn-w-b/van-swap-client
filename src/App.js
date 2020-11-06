@@ -20,6 +20,7 @@ import DeleteVan from "./components/DeleteVan/deleteVan";
 import DeleteProfile from "./components/DeleteProfile/deleteProfile";
 import AllVans from "./views/AllVans/allVans";
 import VanDetails from "./views/VanDetails/vanDetails";
+import SwapRequest from "./views/SwapRequest/swapRequest";
 
 
 class App extends React.Component {
@@ -128,6 +129,12 @@ class App extends React.Component {
             user={this.state.user}
             authenticated={authenticated}
             component={VanDetails}
+            />}
+            {<PrivateRoute
+            exact path="/swaprequest/:id"
+            user={this.state.user}
+            authenticated={authenticated}
+            component={SwapRequest}
             />}
             {!authenticated && <AnonRoute
               exact path="/"

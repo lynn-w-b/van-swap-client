@@ -63,12 +63,38 @@ export const allvans = () => {
     .catch((err) => console.log(err))
 };
 
-export const vandetails = ({ _id }) => {
-  console.log("vandetails, van=", _id)
+export const vandetails = ({ id }) => {
+  console.log("vandetails, van=", id)
   return service
-  .get(`van/details/${_id}`)
+  .get(`van/details/${id}`)
   .then((response) => response.data)
   .catch((err) => {
       console.log(err);
   });
 };
+
+export const createswap = ({
+  swaprequester,
+  vanowner,
+  van,
+  startdate,
+  enddate,
+  additionalInfo}) => {
+  console.log("createswap being triggered", 
+  swaprequester,
+  vanowner,
+  van,
+  startdate,
+  enddate,
+  additionalInfo);
+  return service
+  .post(`/van/swaprequest/${van}`, 
+    {swaprequester,
+      vanowner,
+      van,
+      startdate,
+      enddate,
+      additionalInfo})
+  .then((response) => response.data)
+  .catch((err) => console.log(err))
+}
