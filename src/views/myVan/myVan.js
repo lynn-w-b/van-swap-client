@@ -14,7 +14,9 @@ class MyVan extends React.Component {
       model:'Please enter the model of your van',
       year:'Please enter the year of your van',
       location:'Please enter the location of your van',
-      about:'Please enter additional information about your van'
+      about:'Please enter additional information about your van',
+      image:'',
+      images:[]
     }
   }
 
@@ -23,13 +25,15 @@ componentDidMount = () => {
       console.log("User for my van is: ", this.state.user )
       getvan({user:this.state.user})
         .then((response) => {
-          console.log("Response from getvan service is:", response)
+          console.log("Response from images service is:", response)
                 this.setState({
                   make: response.Van.make,
                   model: response.Van.model,
                 year: response.Van.year,
               location: response.Van.location,
-            about: response.Van.about
+            about: response.Van.about,
+            image: response.Van.image,
+            images: response.Van.images
               });
             })
         .catch((err) => console.log(err))
@@ -51,10 +55,7 @@ componentDidMount = () => {
       <p>Year: {this.state.year}</p>
       <p>Location: {this.state.location}</p>
       <p>Details: {this.state.about}</p>
-    {/* <p>Make: {make && props.van.makeandmodel}</p>
-      <p>Year: {year && props.van.year}</p>
-      <p>Location: {location && props.van.location}</p>
-      <p>Details: {details && props.van.details}</p> */}
+      <img src={this.state.image} alt="Van"/>
     </div>
     <Footer></Footer>
     </div>

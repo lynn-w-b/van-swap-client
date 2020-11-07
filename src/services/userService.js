@@ -83,3 +83,27 @@ export const deletesession = ({id}) => {
 //   .then((response) => response.data)
 //   .catch((err) => console.log(err))
 // }
+
+export function uploadImage(image) {
+  const uploadData = new FormData();
+
+  uploadData.append("image", image);
+  return service
+    .post("/user/upload/image", uploadData)
+    .then(({ data }) => data)
+    .catch(console.error);
+};
+
+export function addMultipleImages(images) {
+  const uploadData = new FormData();
+
+  for (let image of images) {
+    uploadData.append("imageArray", image);
+  }
+
+  return service
+  .post("/user/upload/multi", uploadData)
+  .then(({data}) => data)
+  .catch(console.error);
+};
+

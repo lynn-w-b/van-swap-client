@@ -3,19 +3,45 @@ import './newVanForm.css';
 import { newvan } from "../../services/vanService";
 import NavBarBlank from "../NavBarBlank/NavBarBlank";
 import Footer from "../Footer/Footer";
+import { uploadImage, addMultipleImages } from "../../services/vanService";
 
 
 class NewVanForm extends React.Component {
-    state = {
+  constructor(props){
+    super(props)
+    this.state = {
       user: this.props.user,
       make: "",
       model: "",
       year: "",
       location: "",
       about:"",
-      // image:"",
-      errorMessage: "",
+      image:"",
+      images:"",
+      errorMessage: ""
     };
+  };
+
+    addImage = ({image}) => {
+      this.setState({image})
+    }
+  
+    addImage = ({images}) => {
+      this.setState({images})
+    }
+  
+    handleImageUpload = (event) => {
+      uploadImage(event.target.files[0])
+      .then((res) => this.addImage(res))
+      .catch(console.error)
+    };
+  
+    handleMultipleImages = (event) => {
+    addMultipleImages(event.target.files)
+    .then((res) => this.addImages(res))
+    .catch(console.error)
+    };
+
     handleChange = (event) => {
       const { name, value } = event.target;
       this.setState({
@@ -32,7 +58,8 @@ class NewVanForm extends React.Component {
         year: this.state.year,
         location: this.state.location,
         about: this.state.about,
-        // image: this.state.image
+        image: this.state.image,
+        images: this.state.images
       })
         .then((response) =>
           response.van
@@ -46,7 +73,7 @@ class NewVanForm extends React.Component {
     };
   
     render() {
-      const { make, model, year, location, about, errorMessage } = this.state;
+      const { make, model, year, location, about, image, images, errorMessage } = this.state;
       return (
         <div>
     <NavBarBlank></NavBarBlank>
@@ -97,14 +124,21 @@ class NewVanForm extends React.Component {
             onChange={this.handleChange}
             required={true}
             />
-            {/* <label className="signuplabel">Image </label>
+            <label className="signuplabel">Images </label>
             <input className="signupinput"
             name="image"
             type="file"
             value={image}
-            onChange={this.handleChange}
+            onChange={this.handleImageUpload}
             required={true}
-            /> */}
+            />
+            <input className="signupinput"
+            name="images"
+            type="file"
+            value={images}
+            multiple onChange={this.handleMultipleImages}
+            required={true}
+            />
             <button className="signupbutton" type="submit"> Add New Van </button>
           </form>
           </div>

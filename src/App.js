@@ -26,7 +26,8 @@ import SwapRequest from "./views/SwapRequest/swapRequest";
 class App extends React.Component {
   state = {
     authenticated: false,
-    user: {}
+    user: {},
+    image:''
   };
   componentDidMount = () => {
     const accessToken = localStorage.getItem("accessToken");
@@ -78,6 +79,7 @@ class App extends React.Component {
             user={this.state.user}
             authenticated={authenticated}
             component={NewVanForm}
+            addImage={(image) => this.setState({image})}
             />}
             {<PrivateRoute
             exact path="/myvan"

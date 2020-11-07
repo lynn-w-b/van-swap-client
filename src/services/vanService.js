@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const service = axios.create({
+export const service = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
@@ -13,7 +13,7 @@ export const newvan = ({ user, make, model, year, location, about }) => {
     });
 };
 
-export const getvan = ({ user }) => {
+export const getvan = ({user}) => {
     console.log("getvan, van=", user.van)
     return service
     .get(`van/myvan/${user.van}`)
@@ -97,4 +97,27 @@ export const createswap = ({
       additionalInfo})
   .then((response) => response.data)
   .catch((err) => console.log(err))
-}
+};
+
+export function uploadImage(image) {
+  const uploadData = new FormData();
+
+  uploadData.append("image", image);
+  return service
+    .post("/van/upload/image", uploadData)
+    .then(({ data }) => data)
+    .catch(console.error);
+};
+
+export function addMultipleImages(images) {
+  const uploadData = new FormData();
+
+  for (let image of images) {
+    uploadData.append("imageArray", image);
+  }
+
+  return service
+  .post("/van/upload/multi", uploadData)
+  .then(({data}) => data)
+  .catch(console.error);
+};

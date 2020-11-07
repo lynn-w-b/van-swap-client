@@ -23,7 +23,13 @@ const Home = (props) => {
       <p>Details: {about && props.user.about}</p>
     </div>
     <div className="titlecontainer">
-      <h1>Swap Requests</h1>
+      <h1>Swap Requests Received</h1>
+    </div>
+    <div className="textbox">
+      <p>This is where the swap requests will go linked to the swap request form</p>
+    </div>
+    <div className="titlecontainer">
+      <h1>Swap Requests Sent</h1>
     </div>
     <div className="textbox">
       <p>This is where the swap requests will go linked to the swap request form</p>
