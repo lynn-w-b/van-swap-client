@@ -26,7 +26,7 @@ class NewVanForm extends React.Component {
       this.setState({image})
     }
   
-    addImage = ({images}) => {
+    addImages = ({images}) => {
       this.setState({images})
     }
   
