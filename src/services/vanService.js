@@ -4,9 +4,9 @@ export const service = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
-export const newvan = ({ user, make, model, year, location, about }) => {
+export const newvan = ({ user, make, model, year, location, about, image, images }) => {
   return service
-    .post("/van/newvan", { user, make, model, year, location, about })
+    .post("/van/newvan", { user, make, model, year, location, about, image, images })
     .then((response) => response.data)
     .catch((err) => {
       console.log(err);
@@ -29,14 +29,16 @@ export const editvan = ({
   model,
   year,
   location,
-  about}) => {
+  about,
+images}) => {
   console.log("editvan being triggered", 
   id, 
   make,
   model,
   year,
   location,
-  about);
+  about,
+  images);
   return service
   .post(`/van/editvan/${id}`, 
     {id, 
@@ -44,7 +46,8 @@ export const editvan = ({
     model,
     year,
     location,
-    about})
+    about,
+images})
   .then((response) => response.data)
   .catch((err) => console.log(err))
 }
@@ -105,7 +108,10 @@ export function uploadImage(image) {
   uploadData.append("image", image);
   return service
     .post("/van/upload/image", uploadData)
-    .then(({ data }) => data)
+    .then(({ data }) => {
+      console.log(data);
+      return data;
+    })
     .catch(console.error);
 };
 

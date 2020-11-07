@@ -15,13 +15,11 @@ class MyVan extends React.Component {
       year:'Please enter the year of your van',
       location:'Please enter the location of your van',
       about:'Please enter additional information about your van',
-      image:'',
       images:[]
     }
   }
 
 componentDidMount = () => {
-    if (this.state.user) {
       console.log("User for my van is: ", this.state.user )
       getvan({user:this.state.user})
         .then((response) => {
@@ -32,12 +30,11 @@ componentDidMount = () => {
                 year: response.Van.year,
               location: response.Van.location,
             about: response.Van.about,
-            image: response.Van.image,
             images: response.Van.images
               });
             })
         .catch((err) => console.log(err))
-            }}
+            }
 
   render() {
   return (
@@ -55,7 +52,7 @@ componentDidMount = () => {
       <p>Year: {this.state.year}</p>
       <p>Location: {this.state.location}</p>
       <p>Details: {this.state.about}</p>
-      <img src={this.state.image} alt="Van"/>
+      <img src={this.state.images} alt="Van"/>
     </div>
     <Footer></Footer>
     </div>

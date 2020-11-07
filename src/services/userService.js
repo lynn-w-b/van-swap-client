@@ -10,11 +10,13 @@ export const validateSession = (accessToken) => {
     .then((response) => response.data)
     .catch((err) => err);
 };
-export const signup = ({ fullname, email, password, dateofbirth, location, about }) => {
+export const signup = (body) => {
+  /* console.log(body);
+  return; */
   return service
-    .post("/user/signup", { fullname, email, password, dateofbirth, location, about })
+    .post("/user/signup", body)
     .then((response) => response.data)
-    .catch((err) => err)
+    .catch((err) => err);
 };
 
 export const login = ({ email, password }) => {
@@ -26,12 +28,12 @@ export const login = ({ email, password }) => {
     });
 };
 
-export const logout = ({accessToken}) => {
+export const logout = ({ accessToken }) => {
   console.log("userservice being triggered", accessToken);
   return service
-  .post("/user/logout", {accessToken})
-  .then((response) => response.data)
-  .catch((err) => console.log(err))
+    .post("/user/logout", { accessToken })
+    .then((response) => response.data)
+    .catch((err) => console.log(err));
 };
 
 export const editprofile = ({
@@ -41,40 +43,47 @@ export const editprofile = ({
   password,
   dateofbirth,
   location,
-  about}) => {
-  console.log("editprofile being triggered", 
-  id, 
-  fullname,
-  email,
-  password,
-  dateofbirth,
-  location,
-  about);
-  return service
-  .post(`/user/editprofile/${id}`, 
-    {id, 
+  about,
+  image
+}) => {
+  console.log(
+    "editprofile being triggered",
+    id,
     fullname,
     email,
     password,
     dateofbirth,
     location,
-    about})
-  .then((response) => response.data)
-  .catch((err) => console.log(err))
+    about,
+    image
+  );
+  return service
+    .post(`/user/editprofile/${id}`, {
+      id,
+      fullname,
+      email,
+      password,
+      dateofbirth,
+      location,
+      about,
+      image
+    })
+    .then((response) => response.data)
+    .catch((err) => console.log(err));
 };
 
-export const deleteuser = ({id}) => {
+export const deleteuser = ({ id }) => {
   return service
-  .delete(`/user/delete/${id}`)
-  .then((response) => response.data)
-  .catch((err) => console.log(err))
+    .delete(`/user/delete/${id}`)
+    .then((response) => response.Van._id)
+    .catch((err) => console.log(err));
 };
 
-export const deletesession = ({id}) => {
+export const deletesession = ({ id }) => {
   return service
-  .delete(`user/delete/session/${id}`)
-  .then((response) => response.data)
-  .catch((err) => console.log(err))
+    .delete(`user/delete/session/${id}`)
+    .then((response) => response.data)
+    .catch((err) => console.log(err));
 };
 
 // export const getuserdetails = ({id}) => {
@@ -84,15 +93,30 @@ export const deletesession = ({id}) => {
 //   .catch((err) => console.log(err))
 // }
 
-export function uploadImage(image) {
-  const uploadData = new FormData();
+// export function async uploadImage(image) {
+//   const uploadData = new FormData();
 
+//   uploadData.append("image", image);
+//   return await service
+//     .post("/user/upload/image", uploadData)
+//     .then(({ data }) => {
+//       console.log(data);
+//       return data;
+//     })
+//     .catch(console.error);
+// }
+export const uploadImage = async (image) => {
+  const uploadData = new FormData();
   uploadData.append("image", image);
-  return service
-    .post("/user/upload/image", uploadData)
-    .then(({ data }) => data)
-    .catch(console.error);
-};
+try {
+    let response = await service
+    .post("/user/upload/image", uploadData);
+    const {data} = response;
+    return data;
+  } catch(err) {
+     console.log(err)
+  }
+}
 
 export function addMultipleImages(images) {
   const uploadData = new FormData();
@@ -102,8 +126,7 @@ export function addMultipleImages(images) {
   }
 
   return service
-  .post("/user/upload/multi", uploadData)
-  .then(({data}) => data)
-  .catch(console.error);
-};
-
+    .post("/user/upload/multi", uploadData)
+    .then(({ data }) => data)
+    .catch(console.error);
+}

@@ -22,12 +22,11 @@ import AllVans from "./views/AllVans/allVans";
 import VanDetails from "./views/VanDetails/vanDetails";
 import SwapRequest from "./views/SwapRequest/swapRequest";
 
-
 class App extends React.Component {
   state = {
     authenticated: false,
     user: {},
-    image:''
+    image: "",
   };
   componentDidMount = () => {
     const accessToken = localStorage.getItem("accessToken");
@@ -36,20 +35,20 @@ class App extends React.Component {
         .then((response) => {
           console.log(response, "RESPONSE");
           this.authenticate(response.session.userId);
-        }) 
+        })
         .catch((err) => console.log(err));
     } else {
       this.setState({
         authenticated: false,
-        user: {}
-      })
+        user: {},
+      });
     }
   };
 
   authenticate = (user) => {
     this.setState({
       authenticated: true,
-      user: user
+      user: user,
     });
   };
 
@@ -65,122 +64,168 @@ class App extends React.Component {
     const { authenticated } = this.state;
     return (
       <div className="App">
-      <BrowserRouter>
+        <BrowserRouter>
           <Switch>
-            {authenticated && <PrivateRoute
-              exact
-              path="/"
-              user={this.state.user}
-              authenticated={authenticated}
-              component={Home}
-            />}
-            {<PrivateRoute
-            exact path="/newvan"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={NewVanForm}
-            addImage={(image) => this.setState({image})}
-            />}
-            {<PrivateRoute
-            exact path="/myvan"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={MyVan}
-            />}
-            {<PrivateRoute
-              exact
-              path="/logout"
-              user={this.state.user}
-              authenticated={authenticated}
-              accessToken={localStorage.getItem("accessToken")}
-              handleLogout={this.handleLogout}
-              component={Logout}
-            />}
-            {<PrivateRoute
-            exact path="/editprofile"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={EditProfile}
-            />}
-            {<PrivateRoute
-            exact path="/deleteprofile"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={DeleteProfile}
-            />}
-            {<PrivateRoute
-            exact path="/editvan"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={EditVan}
-            />}
-            {<PrivateRoute
-            exact path="/deletevan"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={DeleteVan}
-            />}
-            {<PrivateRoute
-            exact path="/allvans"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={AllVans}
-            />}
-            {<PrivateRoute
-            exact path="/vandetails/:id"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={VanDetails}
-            />}
-            {<PrivateRoute
-            exact path="/swaprequest/:id"
-            user={this.state.user}
-            authenticated={authenticated}
-            component={SwapRequest}
-            />}
-            {!authenticated && <AnonRoute
-              exact path="/"
-              authenticated={authenticated}
-              authenticate={this.authenticate}
-              component={Splash}
-              />}
-            {!authenticated && <AnonRoute
-              exact
-              path="/login"
-              authenticated={authenticated}
-              authenticate={this.authenticate}
-              component={Login}
-            />}
-            {!authenticated && <AnonRoute
-              exact
-              path="/signup"
-              authenticated={authenticated}
-              authenticate={this.authenticate}
-              component={Signup}
-            />}
-            {!authenticated && <AnonRoute
-              exact
-              path="/about"
-              authenticated={authenticated}
-              authenticate={this.authenticate}
-              component={About}
-            />}
-            {!authenticated && <AnonRoute
-              exact
-              path="/faq"
-              authenticated={authenticated}
-              authenticate={this.authenticate}
-              component={FAQ}
-            />}
-            {!authenticated && <AnonRoute
-              exact
-              path="/contact"
-              authenticated={authenticated}
-              authenticate={this.authenticate}
-              component={Contact}
-            />}
+            {authenticated && (
+              <PrivateRoute
+                exact
+                path="/"
+                user={this.state.user}
+                authenticated={authenticated}
+                component={Home}
+              />
+            )}
+            {
+              <PrivateRoute
+                exact
+                path="/newvan"
+                authenticate={this.authenticate}
+                user={this.state.user}
+                authenticated={authenticated}
+                component={NewVanForm}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/myvan"
+                user={this.state.user}
+                authenticated={authenticated}
+                component={MyVan}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/logout"
+                user={this.state.user}
+                authenticated={authenticated}
+                accessToken={localStorage.getItem("accessToken")}
+                handleLogout={this.handleLogout}
+                component={Logout}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/editprofile"
+                user={this.state.user}
+                authenticate={this.authenticate}
+                authenticated={authenticated}
+                component={EditProfile}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/deleteprofile"
+                user={this.state.user}
+                authenticate={this.authenticate}
+                authenticated={authenticated}
+                component={DeleteProfile}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/editvan"
+                user={this.state.user}
+                authenticated={authenticated}
+                component={EditVan}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/deletevan"
+                user={this.state.user}
+                authenticated={authenticated}
+                component={DeleteVan}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/allvans"
+                user={this.state.user}
+                authenticated={authenticated}
+                component={AllVans}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/vandetails/:id"
+                user={this.state.user}
+                authenticated={authenticated}
+                component={VanDetails}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
+                path="/swaprequest/:id"
+                user={this.state.user}
+                authenticated={authenticated}
+                component={SwapRequest}
+              />
+            }
+            {!authenticated && (
+              <AnonRoute
+                exact
+                path="/"
+                authenticated={authenticated}
+                authenticate={this.authenticate}
+                component={Splash}
+              />
+            )}
+            {!authenticated && (
+              <AnonRoute
+                exact
+                path="/login"
+                authenticated={authenticated}
+                authenticate={this.authenticate}
+                component={Login}
+              />
+            )}
+            {!authenticated && (
+              <AnonRoute
+                exact
+                path="/signup"
+                authenticated={authenticated}
+                authenticate={this.authenticate}
+                component={Signup}
+              />
+            )}
+            {!authenticated && (
+              <AnonRoute
+                exact
+                path="/about"
+                authenticated={authenticated}
+                authenticate={this.authenticate}
+                component={About}
+              />
+            )}
+            {!authenticated && (
+              <AnonRoute
+                exact
+                path="/faq"
+                authenticated={authenticated}
+                authenticate={this.authenticate}
+                component={FAQ}
+              />
+            )}
+            {!authenticated && (
+              <AnonRoute
+                exact
+                path="/contact"
+                authenticated={authenticated}
+                authenticate={this.authenticate}
+                component={Contact}
+              />
+            )}
           </Switch>
-        </BrowserRouter> 
+        </BrowserRouter>
       </div>
     );
   }
