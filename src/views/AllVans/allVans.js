@@ -10,7 +10,7 @@ class AllVans extends React.Component {
     super(props);
     this.state = {
       vans: [],
-      inputValue: ""
+      inputValue: "",
     };
   }
 
@@ -32,9 +32,10 @@ class AllVans extends React.Component {
   };
 
   dynamicSearch = () => {
-    return this.state.vans.filter(van => van.location.toLowerCase().includes(this.state.inputValue.toLowerCase()));
+    return this.state.vans.filter((van) =>
+      van.location.toLowerCase().includes(this.state.inputValue.toLowerCase())
+    );
   };
-
 
   render() {
     const vans = this.dynamicSearch().map((van) => (
@@ -44,6 +45,7 @@ class AllVans extends React.Component {
         model={van.model}
         year={van.year}
         location={van.location}
+        image={van.images[0]}
         key={van._id}
       ></VanView>
     ));
@@ -60,7 +62,9 @@ class AllVans extends React.Component {
         ></NavBar>
         <div className="titlecontainer">
           <h1 className="searchTitle">Search Vans</h1>
-          <label className="searchLabel" htmlFor="search">Search by location</label>
+          <label className="searchLabel" htmlFor="search">
+            Search by location
+          </label>
           <input
             className="searchInput"
             type="text"
@@ -72,7 +76,8 @@ class AllVans extends React.Component {
         <ul>{vans}</ul>
         <Footer></Footer>
       </div>
-)};
+    );
   }
+}
 
 export default AllVans;

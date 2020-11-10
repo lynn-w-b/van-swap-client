@@ -3,7 +3,7 @@ import "./newVanForm.css";
 import { newvan } from "../../services/vanService";
 import NavBarBlank from "../NavBarBlank/NavBarBlank";
 import Footer from "../Footer/Footer";
-import { uploadImage, addMultipleImages } from "../../services/vanService";
+import { addMultipleImages } from "../../services/vanService";
 
 class NewVanForm extends React.Component {
   state = {
@@ -13,29 +13,35 @@ class NewVanForm extends React.Component {
     year: "",
     location: "",
     about: "",
-    image: "",
+    // image: "",
     images: "",
     errorMessage: "",
+    datareceived: false,
+    isLoading: false,
   };
 
-  addImage = (image) => {
-    this.setState({ image });
-  };
+  // addImage = (image) => {
+  //   this.setState({ image });
+  // };
 
   addImages = (images) => {
     this.setState({ images });
+    this.setState({ datareceived: true });
+    this.setState({ isLoading: false });
   };
 
-  handleImageUpload = (event) => {
-    uploadImage(event.target.files[0])
-      .then((res) => {
-        console.log("IMAGE BACK", res);
-        this.addImage(res);
-      })
-      .catch(console.error);
-  };
+  // handleImageUpload = (event) => {
+  //   uploadImage(event.target.files[0])
+  //     .then((res) => {
+  //       console.log("IMAGE BACK", res);
+  //       this.addImage(res);
+  //     })
+  //     .catch(console.error);
+  // };
 
   handleMultipleImages = (event) => {
+    this.setState({ datareceived: false });
+    this.setState({ isLoading: true });
     addMultipleImages(event.target.files)
       .then((res) => {
         console.log(res);
@@ -142,7 +148,12 @@ class NewVanForm extends React.Component {
               multiple
               onChange={this.handleMultipleImages}
             />
-            <button className="signupbutton" type="submit">
+            {this.state.isLoading && <div>Image loading....</div>}
+            <button
+              className="signupbutton"
+              type="submit"
+              disabled={!this.state.datareceived}
+            >
               {" "}
               Add New Van{" "}
             </button>

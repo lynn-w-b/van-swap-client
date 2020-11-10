@@ -1,36 +1,39 @@
 import React from "react";
-import { Route, Link} from 'react-router-dom';
-import './vanView.css';
+import { Route, Link } from "react-router-dom";
+import "./vanView.css";
 
 class VanView extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          _id: this.props._id,
-          make: this.props.make,
-          model: this.props.model,
-          year: this.props.year,
-          location: this.props.location
-        };
-      };
+  state = {
+    _id: this.props._id,
+    make: this.props.make,
+    model: this.props.model,
+    year: this.props.year,
+    location: this.props.location,
+    image: this.props.image,
+  };
 
-render () {
-const {_id, make, model, year, location} = this.state;
-  return (
-    <div>
-    <Route>
-        <Link to={`/vandetails/${_id}`} style={{'textDecoration':'none', 'color':'white'}}>
-        <div className="vanviewbox">
-            <p>Make: {make && this.state.make}</p>
-            <p>Model: {model && this.state.model}</p>
-            <p>Year: {year && this.state.year}</p>
-            <p>Location: {location && this.state.location}</p>
-        </div>
-        </Link>
+  render() {
+    console.log(this.props);
+    const { _id, make, model, year, location, image } = this.state;
+    return (
+      <div>
+        <Route>
+          <Link
+            to={`/vandetails/${_id}`}
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <div className="vanviewbox">
+              <p>Make: {make && this.state.make}</p>
+              <p>Model: {model && this.state.model}</p>
+              <p>Year: {year && this.state.year}</p>
+              <p>Location: {location && this.state.location}</p>
+              <img src={image && this.state.image} alt="" />
+            </div>
+          </Link>
         </Route>
-    </div>
-  );
-};
-};
+      </div>
+    );
+  }
+}
 
 export default VanView;
