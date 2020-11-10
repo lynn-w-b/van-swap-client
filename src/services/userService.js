@@ -11,8 +11,7 @@ export const validateSession = (accessToken) => {
     .catch((err) => err);
 };
 export const signup = (body) => {
-  /* console.log(body);
-  return; */
+  console.log("signup service being triggered", body);
   return service
     .post("/user/signup", body)
     .then((response) => response.data)
@@ -44,7 +43,7 @@ export const editprofile = ({
   dateofbirth,
   location,
   about,
-  image
+  image,
 }) => {
   console.log(
     "editprofile being triggered",
@@ -66,7 +65,7 @@ export const editprofile = ({
       dateofbirth,
       location,
       about,
-      image
+      image,
     })
     .then((response) => response.data)
     .catch((err) => console.log(err));
@@ -93,30 +92,30 @@ export const deletesession = ({ id }) => {
 //   .catch((err) => console.log(err))
 // }
 
-// export function async uploadImage(image) {
-//   const uploadData = new FormData();
-
-//   uploadData.append("image", image);
-//   return await service
-//     .post("/user/upload/image", uploadData)
-//     .then(({ data }) => {
-//       console.log(data);
-//       return data;
-//     })
-//     .catch(console.error);
-// }
-export const uploadImage = async (image) => {
+export function uploadImage(image) {
   const uploadData = new FormData();
+
   uploadData.append("image", image);
-try {
-    let response = await service
-    .post("/user/upload/image", uploadData);
-    const {data} = response;
-    return data;
-  } catch(err) {
-     console.log(err)
-  }
+  return service
+    .post("/user/upload/image", uploadData)
+    .then(({ data }) => {
+      console.log(data);
+      return data;
+    })
+    .catch(console.error);
 }
+// export const uploadImage = async (image) => {
+//   const uploadData = new FormData();
+//   uploadData.append("image", image);
+// try {
+//     let response = await service
+//     .post("/user/upload/image", uploadData);
+//     const {data} = response;
+//     return data;
+//   } catch(err) {
+//      console.log(err)
+//   }
+// }
 
 export function addMultipleImages(images) {
   const uploadData = new FormData();
