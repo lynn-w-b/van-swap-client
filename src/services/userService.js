@@ -129,3 +129,13 @@ export function addMultipleImages(images) {
     .then(({ data }) => data)
     .catch(console.error);
 }
+
+export const userdetails = ({ id }) => {
+  console.log("userdetails being triggered", id);
+  return service
+    .get(`user/details/${id}`)
+    .then((response) => response.data)
+    .catch((err) => {
+      console.log(err);
+    });
+};

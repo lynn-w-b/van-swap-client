@@ -10,6 +10,7 @@
     "bulma-start": "0.0.4",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-alice-carousel": "^2.0.2",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.11.0",
     "react-image-lightbox": "^5.1.1",

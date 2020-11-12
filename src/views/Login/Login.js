@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import { login } from "../../services/userService";
-import Footer from '../../components/Footer/Footer';
-import './Login.css';
+import Footer from "../../components/Footer/Footer";
+import "./Login.css";
 
 class Login extends React.Component {
   state = {
@@ -33,7 +33,8 @@ class Login extends React.Component {
       .then((response) =>
         response.accessToken
           ? (localStorage.setItem("accessToken", response.accessToken),
-            localStorage.setItem("van", response.van),
+            localStorage.setItem("user", response.user._id),
+            localStorage.setItem("van", response.van._id),
             this.props.authenticate(response.user),
             this.props.history.push("/"))
           : this.setState({
@@ -49,30 +50,44 @@ class Login extends React.Component {
     const { email, password, errorMessage } = this.state;
     return (
       <div>
-      <div className="login">
-        {errorMessage !== "" && errorMessage}
-        <form className="loginform" onSubmit={this.handleSubmit}>
-          <label className="loginlabel">Email </label>
-          <input className="logininput"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-            required={true}
-            type="email"
-          />
-          <label className="loginlabel">Password </label>
-          <input className="logininput"
-            name="password"
-            type="password"
-            value={password}
-            onChange={this.handleChange}
-            required={true}
-          />
-          <button className="loginbutton" type="submit"> Login </button>
-          <Route>
-        <Link to={"/"} style={{'textDecoration':'none', 'color':'white', 'textAlign':'center'}}>Back</Link>
-        </Route>
-        </form>
+        <div className="login">
+          {errorMessage !== "" && errorMessage}
+          <form className="loginform" onSubmit={this.handleSubmit}>
+            <label className="loginlabel">Email </label>
+            <input
+              className="logininput"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+              required={true}
+              type="email"
+            />
+            <label className="loginlabel">Password </label>
+            <input
+              className="logininput"
+              name="password"
+              type="password"
+              value={password}
+              onChange={this.handleChange}
+              required={true}
+            />
+            <button className="loginbutton" type="submit">
+              {" "}
+              Login{" "}
+            </button>
+            <Route>
+              <Link
+                to={"/"}
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  textAlign: "center",
+                }}
+              >
+                Back
+              </Link>
+            </Route>
+          </form>
         </div>
         <Footer></Footer>
       </div>

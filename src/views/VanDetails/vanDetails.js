@@ -3,6 +3,8 @@ import { Route, Link, useParams } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { vandetails } from "../../services/vanService";
+import ImageSlider from "../../components/ImageSlider/imageSlider";
+import "./vanDetails.css";
 
 const VanDetails = (props) => {
   console.log("vandetails props:", props);
@@ -17,7 +19,7 @@ const VanDetails = (props) => {
   const [images, setImages] = useState("");
   const [fullname, setFullname] = useState("");
   const [details, setDetails] = useState("");
-  const [ownerId, setOwnerId] = useState({});
+  const [ownerId, setOwnerId] = useState("");
   const [image, setImage] = useState("");
 
   useEffect(() => {
@@ -30,25 +32,25 @@ const VanDetails = (props) => {
         setLocation(response.Van.location);
         setAbout(response.Van.about);
         setImages(response.Van.images);
-        setFullname(response.Van.owner.fullname);
-        setDetails(response.Van.owner.about);
-        setImage(response.Van.owner.image);
-        setOwnerId(response.Van.owner._id);
+        setFullname(response.Owner.fullname);
+        setDetails(response.Owner.about);
+        setImage(response.Owner.image);
+        setOwnerId(response.Owner._id);
       })
       .catch((err) => console.log(err));
   });
 
   const onClickHandler = () => {
-    console.log(`vanowner:${ownerId}, van:${id}`);
-    localStorage.setItem("vanowner", ownerId);
+    console.log(
+      "owner details",
+      { details },
+      "vanowner:",
+      { ownerId },
+      "van:",
+      id
+    );
+    localStorage.setItem("vanowner", { ownerId }.ownerId);
     localStorage.setItem("van_id", id);
-  };
-
-  const DisplayImages = () => {
-    let photos = [...{ images }];
-    photos.forEach((image) => {
-      return <img src={image} alt="" rounded />;
-    });
   };
 
   return (
@@ -80,10 +82,10 @@ const VanDetails = (props) => {
           <p>Year: {year}</p>
           <p>Location: {location}</p>
           <p>Details: {about}</p>
-          <DisplayImages />
+          <ImageSlider images={images} />
           <p>Owner: {fullname}</p>
           <p>About the owner: {details}</p>
-          <img src={{ image }} alt="" />
+          <img src={image} alt="" />
           <Link
             to={"/allvans"}
             style={{ textDecoration: "none", color: "white" }}

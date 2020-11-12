@@ -57,7 +57,7 @@ class Signup extends React.Component {
       .then((response) =>
         response.accessToken
           ? (localStorage.setItem("accessToken", response.accessToken),
-            console.log("new user details", response.user),
+            localStorage.setItem("user", response.user._id),
             this.props.authenticate(response.user),
             this.props.history.push("/newvan"))
           : this.setState({
