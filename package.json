@@ -10,6 +10,8 @@
     "bulma-start": "0.0.4",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-alert": "^7.0.2",
+    "react-alert-template-basic": "^1.0.0",
     "react-alice-carousel": "^2.0.2",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.11.0",

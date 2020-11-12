@@ -18,6 +18,7 @@ class Swapgot extends React.Component {
           requestername: response.User.fullname,
           requesterlocation: response.User.location,
         });
+        localStorage.setItem("swap_id", this.props.id);
       })
       .catch((err) => console.log(err));
   };

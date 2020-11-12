@@ -23,7 +23,8 @@ class Swap extends React.Component {
           year: response.Van.year,
           location: response.Van.location,
           ownername:response.Owner.fullname
-        })
+        });
+        localStorage.setItem("swap_id", this.props.id);
       })
       .catch((err) => console.log(err));
   };

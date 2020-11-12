@@ -128,6 +128,29 @@ export const getswapsreceived = (id) => {
     .catch((err) => console.log(err));
 };
 
+export const getswapdetails = (id) => {
+  console.log("getswapdetails being triggered", id);
+  return service
+  .get(`/swap/swapsdetails/${id}`)
+  .then((response) => response.data)
+  .catch((err) => console.log(err));
+};
+
+export const editswap = ( id, status ) => {
+  console.log(
+    "editswap being triggered",
+    id,
+    status
+  );
+  return service
+    .post(`/swap/editswap/${id}`, 
+      id,
+      status
+    )
+    .then((response) => response.data)
+    .catch((err) => console.log(err));
+};
+
 export function uploadImage(image) {
   const uploadData = new FormData();
 

@@ -18,6 +18,7 @@ class VanDetails extends React.Component {
     details: "",
     ownerId: "",
     image: "",
+    id: localStorage.getItem("van-id")
   };
 
   componentDidMount = () => {
@@ -52,6 +53,7 @@ class VanDetails extends React.Component {
       this.state.id
     );
     localStorage.setItem("vanowner", this.state.ownerId);
+    localStorage.setItem("van_id", this.state.id);
   };
 
   render() {
