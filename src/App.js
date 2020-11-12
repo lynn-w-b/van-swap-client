@@ -180,6 +180,15 @@ class App extends React.Component {
                 component={SwapDetails}
               />
             }
+            {
+              <PrivateRoute
+                exact
+                path="/editswap/:id"
+                user={this.state.user}
+                authenticated={authenticated}
+                component={SwapDetails}
+              />
+            }
             {!authenticated && (
               <AnonRoute
                 exact
