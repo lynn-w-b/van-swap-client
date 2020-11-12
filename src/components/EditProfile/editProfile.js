@@ -16,7 +16,7 @@ class EditProfile extends React.Component {
       dateofbirth: this.props.user.dateofbirth,
       location: this.props.user.location,
       about: this.props.user.about,
-      image: "",
+      image: this.props.user.image,
       errorMessage: "",
     };
   }
