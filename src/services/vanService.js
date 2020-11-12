@@ -136,16 +136,16 @@ export const getswapdetails = (id) => {
   .catch((err) => console.log(err));
 };
 
-export const editswap = ( id, status ) => {
+export const editswap = ( id, decision ) => {
   console.log(
     "editswap being triggered",
     id,
-    status
+    decision
   );
   return service
     .post(`/swap/editswap/${id}`, 
       id,
-      status
+      decision
     )
     .then((response) => response.data)
     .catch((err) => console.log(err));

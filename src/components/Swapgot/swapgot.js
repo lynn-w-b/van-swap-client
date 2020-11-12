@@ -6,7 +6,7 @@ class Swapgot extends React.Component {
   state = {
     requestername: "",
     requesterlocation: "",
-    accepted: this.props.accepted,
+    decision: this.props.decision,
   };
 
   componentDidMount = () => {

@@ -18,7 +18,7 @@ class VanDetails extends React.Component {
     details: "",
     ownerId: "",
     image: "",
-    id: localStorage.getItem("van-id")
+    id: localStorage.getItem("van_id")
   };
 
   componentDidMount = () => {

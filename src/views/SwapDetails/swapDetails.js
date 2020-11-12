@@ -35,7 +35,7 @@ class SwapDetails extends React.Component {
     startdate:"",
     enddate:"",
     additionalInfo:"",
-    status:"",
+    decision:"",
     id:localStorage.getItem("swap_id"),
     alert:""
   };
@@ -74,23 +74,23 @@ class SwapDetails extends React.Component {
     startdate: response.Swap.startdate,
     enddate: response.Swap.enddate,
     additionalInfo:response.Swap.additionalInfo,
-    status: response.Swap.status,
+    decision: response.Swap.decision,
         });
       })
       .catch((err) => console.log(err));
   };
 
   onClickHandler = (event) => {
-      this.setState({status:"Accepted"});
-      console.log("id and status=", this.state.id, this.state.status)
-      editswap(this.state.id, this.state.status)
+      this.setState({decision:"Accepted"});
+      console.log("id and decision=", this.state.id, this.state.decision)
+      editswap(this.state.id, this.state.decision)
       .then ((response) => {
         this.setState({alert:"You have accepted this swap request, please contact the swaprequester by email to make further arrangements"})
       })
   };
   onClickHandler2 = (event) => {
-    this.setState({status:"Declined"});
-    editswap(this.state.id, this.state.status)
+    this.setState({decision:"Declined"});
+    editswap(this.state.id, this.state.decision)
     .then ((response) => {
         this.setState({alert:"You have declined this swap request, you need take no further action"})
     })
@@ -129,7 +129,7 @@ class SwapDetails extends React.Component {
             <p>Startdate: {this.state.startdate}</p>
             <p>Enddate: {this.state.enddate}</p>
             <p>Additional Information: {this.state.additionalInfo}</p>
-            <p>Status:{this.state.status}</p>
+            <p>Status:{this.state.decision}</p>
             </div>
             <div className="titlecontainer">
             <h1>Van proposed for Swap...</h1>
