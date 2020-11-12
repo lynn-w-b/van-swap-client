@@ -45,8 +45,7 @@ export const editprofile = ({
   about,
   image,
 }) => {
-  console.log(
-    "editprofile being triggered",
+  console.log("editprofile being triggered", {
     id,
     fullname,
     email,
@@ -54,8 +53,8 @@ export const editprofile = ({
     dateofbirth,
     location,
     about,
-    image
-  );
+    image,
+  });
   return service
     .post(`/user/editprofile/${id}`, {
       id,

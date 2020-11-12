@@ -22,7 +22,7 @@ class EditProfile extends React.Component {
   }
 
   addImage = (image) => {
-    this.setState({ image });
+    this.setState({ image: image });
   };
 
   handleImageUpload = (event) => {
@@ -53,8 +53,8 @@ class EditProfile extends React.Component {
       image: this.state.image,
     })
       .then((response) =>
-        response.user
-          ? (this.props.authenticate(response.user),
+        response.User
+          ? (this.props.authenticate(response.User),
             this.props.history.push("/"))
           : this.setState({
               errorMessage: response.errorMessage,

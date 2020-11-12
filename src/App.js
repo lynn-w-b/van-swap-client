@@ -119,6 +119,16 @@ class App extends React.Component {
             {
               <PrivateRoute
                 exact
+                path="/editprofile/:id"
+                user={this.state.user}
+                authenticate={this.authenticate}
+                authenticated={authenticated}
+                component={Home}
+              />
+            }
+            {
+              <PrivateRoute
+                exact
                 path="/deleteprofile"
                 user={this.state.user}
                 authenticate={this.authenticate}
