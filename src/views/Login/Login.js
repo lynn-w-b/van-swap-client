@@ -32,9 +32,13 @@ class Login extends React.Component {
     })
       .then((response) =>
         response.accessToken
-          ? (localStorage.setItem("accessToken", response.accessToken),
-            localStorage.setItem("user", response.user._id),
-            localStorage.setItem("van", response.van._id),
+          ? (console.log("login response", response),
+            localStorage.setItem("accessToken", response.accessToken),
+            localStorage.setItem("currentuser", response.user._id),
+            localStorage.setItem("currentusername", response.user.fullname),
+            localStorage.setItem("yourvan", response.van._id),
+            localStorage.setItem( "yourvanmake", response.van.make),
+            localStorage.setItem ("yourvanmodel", response.van.model),
             this.props.authenticate(response.user),
             this.props.history.push("/"))
           : this.setState({

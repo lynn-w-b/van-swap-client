@@ -5,7 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import "./Home.css";
 import Swap from "../../components/Swap/swap.js";
 import Swapgot from "../../components/Swapgot/swapgot.js";
-import { getswapsrequested, vandetails } from "../../services/vanService";
+import { getswapsrequested } from "../../services/vanService";
 import { getswapsreceived } from "../../services/vanService";
 
 class Home extends React.Component {
@@ -39,7 +39,7 @@ class Home extends React.Component {
   };
   render() {
     const { fullname, dateofbirth, location, about, image } = this.props.user;
-    const details = this.state.swaps.map((swap) => {
+    const swapdetails = this.state.swaps.map((swap) => {
       return (
         <Swap
           van={swap.van}
@@ -53,7 +53,7 @@ class Home extends React.Component {
         ></Swap>
       );
     });
-    const details2 = this.state.swapsgot.map((swapgot) => {
+    const swapgotdetails = this.state.swapsgot.map((swapgot) => {
       return (
         <Swapgot
           startdate={swapgot.startdate}
@@ -99,11 +99,11 @@ class Home extends React.Component {
         <div className="titlecontainer">
           <h1>Swap Requests Received</h1>
         </div>
-        {details2}
+        {swapgotdetails}
         <div className="titlecontainer">
           <h1>Swap Requests Sent</h1>
         </div>
-        {details}
+        {swapdetails}
         <Footer></Footer>
       </div>
     );

@@ -19,9 +19,9 @@ class SwapRequest extends React.Component {
 
   componentDidMount = () => {
     this.setState({
-      swaprequester: localStorage.getItem("user"),
+      swaprequester: localStorage.getItem("currentuser"),
       vanowner: localStorage.getItem("vanowner"),
-      van: localStorage.getItem("van"),
+      van: localStorage.getItem("van_id"),
     });
   };
 

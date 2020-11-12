@@ -80,7 +80,7 @@ export const allvans = () => {
     .catch((err) => console.log(err));
 };
 
-export const vandetails = ({ id }) => {
+export const vandetails = ( id ) => {
   console.log("vandetails, van=", id);
   return service
     .get(`van/details/${id}`)

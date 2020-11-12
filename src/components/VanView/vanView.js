@@ -12,6 +12,10 @@ class VanView extends React.Component {
     image: this.props.image,
   };
 
+  onClickHandler = () => {
+    localStorage.setItem("van_id", this.state._id)
+  }
+
   render() {
     console.log(this.props);
     const { _id, make, model, year, location, image } = this.state;
@@ -21,6 +25,7 @@ class VanView extends React.Component {
           <Link
             to={`/vandetails/${_id}`}
             style={{ textDecoration: "none", color: "white" }}
+            onClick={this.onClickHandler}
           >
             <div className="vanviewbox">
               <p>Make: {make && this.state.make}</p>

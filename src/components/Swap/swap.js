@@ -14,8 +14,9 @@ class Swap extends React.Component {
 
   componentDidMount = () => {
     console.log("Swap componeent props=", this.props.van);
-    vandetails({id:this.props.van})
+    vandetails(this.props.van)
       .then((response) => {
+          console.log("swap vandetails response", response);
         this.setState({
           make: response.Van.make,
           model: response.Van.model,
@@ -28,8 +29,14 @@ class Swap extends React.Component {
   };
 
   render() {
-      const {make, model, year, location, ownername, accepted} = this.state;
+      const {make, model, year, location, ownername} = this.state;
       const {startdate, enddate} = this.props;
+      let button;
+    if(this.state.accepted) {
+        button = <button>Request Accepted</button>
+    } else {
+        button = <button>Request Pending Approval</button>
+    }
     return (
       <div>
         <Route>
@@ -47,7 +54,7 @@ class Swap extends React.Component {
                 {enddate && this.props.enddate}
               </p>
               <p>Van owner: {ownername && this.state.ownername}</p>
-              <p>Status: {accepted && this.state.accepted}</p>
+              <p>Status: {button}</p>
             </div>
           </Link>
         </Route>
