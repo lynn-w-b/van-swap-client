@@ -1,79 +1,79 @@
 .titlecontainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10vh;
-    margin-right: 30vw;
-    
+  display: flex;
+  flex-direction: row;
+  margin-top: 10vh;
+  margin-right: 30vw;
+  width: 74vw;
 }
 .titlecontainer h1 {
-    margin-left: 3vw;
-    margin-right: 1vw;
+  margin-left: 3vw;
+  margin-right: 1vw;
 }
 
 .editbutton {
-    width: 5vw;
-    height: 12vh;
-    padding: 0.2em;
-    border: solid white 0.3em;
-    border-radius: 0.75em;
-    position: absolute;
-    right: 15vw;
-    top: 31vh;
-    background: #F2994A;
-    color: #4f4f4f;
-
+  width: 5vw;
+  height: 10vh;
+  padding: 0.2em;
+  border: solid white 0.3em;
+  border-radius: 0.75em;
+  position: absolute;
+  right: 15vw;
+  top: 32vh;
+  background: #f2994a;
+  color: #4f4f4f;
 }
 .editbutton img {
-    width: 4vw;
+  width: 4vw;
+  border: solid 0.3em #f2994a;
+  border-radius: 0.75em;
 }
 p {
-    font-family: 'Big Shoulders Inline Text', cursive;
-    font-size: 2em;
+  font-family: "Big Shoulders Inline Text", cursive;
+  font-size: 2em;
 }
 .first-panel {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .photo {
-    width: auto;
-    max-height: 30vh;
-    border: solid #4f4f4f 1em;
-    border-radius: 0.75em;
-    margin-bottom: 2vh;
+  width: auto;
+  max-height: 30vh;
+  border: solid #4f4f4f 1em;
+  border-radius: 0.75em;
+  margin-bottom: 2vh;
 }
 .handwriting {
-    font-family: 'Just Me Again Down Here', cursive;
-    font-size: 3em;
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 3em;
 }
 .arrow {
-    border: none;
-    width: auto;
-    height: 10vh;
+  border: none;
+  width: auto;
+  height: 10vh;
 }
 .boy {
-    width: 4vw;
+  width: 4vw;
 }
 .panel-title {
-    font-family: 'Just Me Again Down Here', cursive;
-    font-size: 3em;
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 3em;
 }
 .swapviewbox {
-    width: 74vw;
-        height: auto;
-        margin-left: 12vw;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-        background-color:white;
-        color: #4f4f4f;
-        padding: 1em;
-        border: solid 2em #F2994A;
-        border-radius: 0.75em;
-        text-align: left;
-    }
+  width: 74vw;
+  height: auto;
+  margin-left: 12vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  background-color: white;
+  color: #4f4f4f;
+  padding: 1em;
+  border: solid 2em #f2994a;
+  border-radius: 0.75em;
+  text-align: left;
+}
 .home {
-    background-image: url('/orangecampervan.jpg');
+  background-image: url("/orangecampervan.jpg");
   background-repeat: repeat;
   background-size: cover;
-
 }

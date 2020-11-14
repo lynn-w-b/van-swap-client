@@ -20,6 +20,7 @@ class SwapDetails extends React.Component {
     vanlocation: "",
     vanabout: "",
     vanimages: [],
+    vanowner:"",
     vanownerfullname: "",
     vanowneremail: "",
     vanownerdetails: "",
@@ -59,6 +60,7 @@ class SwapDetails extends React.Component {
           vanlocation: response.Van.location,
           vanabout: response.Van.about,
           vanimages: [...response.Van.images],
+          vanowner: response.Vanowner._id,
           vanownerfullname: response.Vanowner.fullname,
           vanowneremail: response.Vanowner.email,
           vanownerdetails: response.Vanowner.about,
@@ -82,7 +84,9 @@ class SwapDetails extends React.Component {
 
   onClickHandler = (event) => {
     if (this.state.vanowner === localStorage.getItem("currentuser")) {
-      this.setState({ decision: "Accepted" });
+      this.setState({ 
+        decision: "Accepted", 
+      });
       console.log("id and decision=", this.state.id, this.state.decision);
       editswap(this.state.id, this.state.decision).then((response) => {
         this.setState({
@@ -121,8 +125,10 @@ class SwapDetails extends React.Component {
     } else if(this.state.decision === "Accepted"){
         button = <button className="acceptbutton">Accepted</button>
     } else if(this.state.decision === "Declined"){
-        button = <button classname="declinebutton">Declined</button>
-    }
+        button = <button className="declinebutton">Declined</button>
+    } else {
+      button = <button className="pendingbutton">Pending Approval</button>
+    };
     return (
       <div className="swapdetails">
         <NavBar

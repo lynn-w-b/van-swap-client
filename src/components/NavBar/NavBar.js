@@ -13,7 +13,7 @@ const NavBar = (props) => {
         <Link to={"/"} style={{'textDecoration':'none', 'color':'white'}}><img className="mainnavimage" src='/SVG/SVG/Asset 3.svg' alt="Van Swap Logo"/></Link>
         </div>
         <div className="buttons buttonplace">
-        <button className="mainnavbutton"><Link to={link1} style={{'textDecoration':'none', 'color':'white'}}>{button1}</Link></button>
+        <button className="firstnavbutton"><Link to={link1} style={{'textDecoration':'none', 'color':'white'}}>{button1}</Link></button>
         <button className="mainnavbutton"><Link to={link2} style={{'textDecoration':'none', 'color':'white'}}>{button2}</Link></button>
         <button className="endnavbutton"><Link to={link3} style={{'textDecoration':'none', 'color':'white'}}>{button3}</Link></button>
         </div>

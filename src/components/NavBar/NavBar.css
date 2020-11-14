@@ -6,36 +6,51 @@
     justify-content: space-around;
 }
 .mainnavimage {
-    border: solid 0.3em #F2994a;
+    border: solid 0.5em #F2994a;
     border-radius: 0.75em;
     margin-top: 2em;
     margin-left: 8vw;
     width: 20vw;
+    max-height: 35vh;
 }
-
+.firstnavbutton {
+    background-color:#F2994A;
+    color: #4f4f4f;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.8em;
+    padding: 1.2em 1em 2.5em 1em;
+    margin: 2em;
+    border: solid 0.3em #4f4f4f;
+    border-radius: 0.75em;
+    width: 10vw;
+    height: 15vh;
+    margin-top: 2.4em;
+}
 .mainnavbutton {
     background-color:#F2994A;
     color: #4f4f4f;
     font-family: 'Permanent Marker', cursive;
-    font-size: 2em;
+    font-size: 1.8em;
     padding: 1em 1em 1em 1em;
     margin: 2em;
     border: solid 0.3em #4f4f4f;
     border-radius: 0.75em;
     width: 10vw;
     height: 15vh;
+    margin-top: 2.4em;
 }
 .endnavbutton {
     background-color:#4F4F4F;
     color: white;
     font-family: 'Permanent Marker', cursive;
-    font-size: 2em;
-    padding: 1em 1em 1em 1em;
+    font-size: 1.8em;
+    padding: 0.3em 1em 1.7em 1em;
     margin: 2em;
     border: solid 0.3em #F2994A;
     border-radius: 0.75em;
     width: 10vw;
     height: 15vh;
+    margin-top: 2.4em;
 }
 .buttonplace {
     margin-right: 7vw;

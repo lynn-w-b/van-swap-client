@@ -47,7 +47,7 @@ class Home extends React.Component {
           enddate={swap.enddate}
           additionalinfo={swap.additionalInfo}
           vanowner={swap.vanowner}
-          accepted={swap.accepted}
+          decision={swap.decision}
           id={swap._id}
           key={swap._id}
         ></Swap>
@@ -60,7 +60,7 @@ class Home extends React.Component {
           enddate={swapgot.enddate}
           additionalinfo={swapgot.additionalInfo}
           swaprequester={swapgot.swaprequester}
-          accepted={swapgot.accepted}
+          decision={swapgot.decision}
           id={swapgot._id}
           key={swapgot._id}
         ></Swapgot>

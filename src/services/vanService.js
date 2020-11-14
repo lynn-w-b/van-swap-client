@@ -144,7 +144,6 @@ export const editswap = ( id, decision ) => {
   );
   return service
     .post(`/swap/editswap/${id}`, 
-      id,
       decision
     )
     .then((response) => response.data)
