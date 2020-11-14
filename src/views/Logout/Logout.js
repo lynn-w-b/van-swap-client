@@ -29,7 +29,7 @@ class Logout extends React.Component {
       <div className="background">
       <div className="login">
         <form className="loginform" onSubmit={this.handleSubmit}>
-        <img className="logo" src="/VanSwapLogo.svg" alt=""/>
+        <img className="vanlogo" src="/VanSwapLogo.svg" alt=""/>
         {errorMessage !== "" && errorMessage}
           <p className="exittext">Are you sure you would like to log-out?</p>
           <button className="loginbutton" type="submit"> Log-out </button>

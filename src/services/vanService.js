@@ -139,12 +139,11 @@ export const getswapdetails = (id) => {
 export const editswap = ( id, decision ) => {
   console.log(
     "editswap being triggered",
-    id,
-    decision
+    id, {decision: decision}
   );
   return service
-    .post(`/swap/editswap/${id}`, 
-      decision
+    .post(`/swap/editswap/${id}`, id,  
+      {decision: {decision}}
     )
     .then((response) => response.data)
     .catch((err) => console.log(err));

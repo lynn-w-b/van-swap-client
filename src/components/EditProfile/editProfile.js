@@ -18,14 +18,20 @@ class EditProfile extends React.Component {
       about: this.props.user.about,
       image: this.props.user.image,
       errorMessage: "",
+      datareceived: false,
+      isLoading: false,
     };
   }
 
   addImage = (image) => {
     this.setState({ image: image });
+    this.setState({ datareceived: true });
+    this.setState({ isLoading: false });
   };
 
   handleImageUpload = (event) => {
+    this.setState({ datareceived: false });
+    this.setState({ isLoading: true });
     uploadImage(event.target.files[0])
       .then((res) => {
         console.log("IMAGE BACK", res);
@@ -145,7 +151,8 @@ class EditProfile extends React.Component {
               //  value={image}
               onChange={this.handleImageUpload}
             />
-            <button className="signupbutton" type="submit">
+            {this.state.isLoading && <div>Image loading....</div>}
+            <button className="signupbutton" type="submit" disabled={!this.state.datareceived}>
               {" "}
               Save changes{" "}
             </button>

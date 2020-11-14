@@ -20,7 +20,7 @@ class SwapDetails extends React.Component {
     vanlocation: "",
     vanabout: "",
     vanimages: [],
-    vanowner:"",
+    vanowner: "",
     vanownerfullname: "",
     vanowneremail: "",
     vanownerdetails: "",
@@ -84,16 +84,21 @@ class SwapDetails extends React.Component {
 
   onClickHandler = (event) => {
     if (this.state.vanowner === localStorage.getItem("currentuser")) {
-      this.setState({ 
-        decision: "Accepted", 
-      });
-      console.log("id and decision=", this.state.id, this.state.decision);
-      editswap(this.state.id, this.state.decision).then((response) => {
-        this.setState({
-          alert:
-            "You have accepted this swap request, please contact the swaprequester by email to make further arrangements",
-        });
-      });
+      this.setState({ decision: "Accepted" });
+      localStorage.setItem("decision", "Accepted");
+      console.log(
+        "id and decision=",
+        this.state.id,
+        localStorage.getItem("decision")
+      );
+      editswap(this.state.id, localStorage.getItem("decision")).then(
+        (response) => {
+          this.setState({
+            alert:
+              "You have accepted this swap request, please contact the swaprequester by email to make further arrangements",
+          });
+        }
+      );
     } else {
       this.setState({
         alert:
@@ -104,12 +109,15 @@ class SwapDetails extends React.Component {
   onClickHandler2 = (event) => {
     if (this.state.vanowner === localStorage.getItem("currentuser")) {
       this.setState({ decision: "Declined" });
-      editswap(this.state.id, this.state.decision).then((response) => {
-        this.setState({
-          alert:
-            "You have declined this swap request, you need take no further action",
-        });
-      });
+      localStorage.setItem("decision", "Declined");
+      editswap(this.state.id, localStorage.getItem("decision")).then(
+        (response) => {
+          this.setState({
+            alert:
+              "You have declined this swap request, you need take no further action",
+          });
+        }
+      );
     } else {
       this.setState({
         alert:
@@ -120,15 +128,16 @@ class SwapDetails extends React.Component {
 
   render() {
     let button;
-      if(this.state.decision === "Pending Approval" || !this.state.decision) {
-        button = <button className="pendingbutton">Pending Approval</button>
-    } else if(this.state.decision === "Accepted"){
-        button = <button className="acceptbutton">Accepted</button>
-    } else if(this.state.decision === "Declined"){
-        button = <button className="declinebutton">Declined</button>
-    } else {
-      button = <button className="pendingbutton">Pending Approval</button>
-    };
+    if (
+      localStorage.getItem("decision") === "Pending Approval" ||
+      !localStorage.getItem("decision")
+    ) {
+      button = <button className="pendingbutton">Pending Approval</button>;
+    } else if (this.state.decision === "Accepted") {
+      button = <button className="acceptbutton">Accepted</button>;
+    } else if (localStorage.getItem("decision") === "Declined") {
+      button = <button className="declinebutton">Declined</button>;
+    }
     return (
       <div className="swapdetails">
         <NavBar
@@ -367,16 +376,20 @@ class SwapDetails extends React.Component {
             </button>
           </div>
           {this.state.alert && (
-            <div className="teal handwriting big centred">{this.state.alert}</div>
+            <div className="teal handwriting big centred">
+              {this.state.alert}
+            </div>
           )}
         </div>
         <div>
-        <Route>
-          <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
-            <button className="backyougobutton" type="submit">Back</button>
-          </Link>
-        </Route>
-        <Footer></Footer>
+          <Route>
+            <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
+              <button className="backyougobutton" type="submit">
+                Back
+              </button>
+            </Link>
+          </Route>
+          <Footer></Footer>
         </div>
       </div>
     );

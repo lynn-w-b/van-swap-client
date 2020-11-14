@@ -9,3 +9,9 @@
     background-repeat: no-repeat;
     background-size: 75%; 
 }
+.vanlogo {
+    border: solid 0.3em #f2994a;
+  border-radius: 0.75em;
+    height: 40vh;
+    width: 33.3vw;
+}

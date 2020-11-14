@@ -1,34 +1,35 @@
 .splash-nav {
-    background-color: #F2994A;
-    width: 100vw;
-    height: 15vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  background-color: #f2994a;
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 nav button {
-    background-color:#4F4F4F;
-    color: white;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.5em;
-    padding: 1vh 2vw 2.5vh 2.5vw;
-    margin: 4vh 2vw 2vh 2vw;
-    border: solid 0.3em #f9fae3;
-    border-radius: 0.75em;
+  background-color: #4f4f4f;
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5em;
+  padding: 1vh 2vw 2.5vh 2.5vw;
+  margin: 4vh 2vw 2vh 2vw;
+  border: solid 0.3em #f9fae3;
+  border-radius: 0.75em;
 }
 .splash-image {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    background-image: url('/greencampervan.jpg'), url('/bluecampervan2.jpg');
-    background-repeat: repeat;
-    background-size: cover;
-    height: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: url("/greencampervan.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  height: 75vh;
 }
 .splash-image img {
-height: 45vh;
-border: solid 0.3em #4f4f4f;
-    border-radius: 0.75em;
-    margin: 7em;
+  height: 39.7vh;
+  border: solid 0.3em #4f4f4f;
+  border-radius: 0.75em;
+  margin-top: 15vh;
+  width: 34vw;
 }

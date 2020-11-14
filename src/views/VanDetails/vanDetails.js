@@ -138,7 +138,7 @@ class VanDetails extends React.Component {
               <div className="panel-body">
                 <div className="first-panel">
                   <div>
-                    <p>{this.state.details}</p>
+                    <p className="limited">{this.state.details}</p>
                   </div>
                   <div>
                     <div>

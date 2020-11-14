@@ -56,7 +56,6 @@ class Login extends React.Component {
       <div>
         <div className="login">
           <form className="loginform" onSubmit={this.handleSubmit}>
-          {errorMessage !== "" && errorMessage}
           <img className="logo" src="/VanSwapLogo.svg" alt=""/>
             <label className="loginlabel">Email </label>
             <input
@@ -76,6 +75,7 @@ class Login extends React.Component {
               onChange={this.handleChange}
               required={true}
             />
+            {errorMessage !== "" && errorMessage}
             <button className="loginbutton" type="submit">
               {" "}
               Login{" "}

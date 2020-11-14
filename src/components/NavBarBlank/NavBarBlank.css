@@ -1,15 +1,15 @@
 .nav-bar-blank {
-    /* background-color: #F9FAE3; */
-    width: 100vw;
-    height: 20vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  /* background-color: #F9FAE3; */
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.vanlogo {
-    border: solid 0.3em #F2994a;
-    border-radius: 0.75em;
-    margin-top: 2vh;
-    width: 20vw;
+.campervanlogo {
+  border: solid 0.3em #f2994a;
+  border-radius: 0.75em;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 20.7vw;
 }
-

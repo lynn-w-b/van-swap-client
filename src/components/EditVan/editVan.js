@@ -19,14 +19,20 @@ class EditVan extends React.Component {
       about:'Please enter additional information about your van',
       images:[],
       errorMessage: "",
+      datareceived: false,
+    isLoading: false,
     };
   }
 
   addImages = (images) => {
     this.setState({ images });
+    this.setState({ datareceived: true });
+    this.setState({ isLoading: false });
   };
 
   handleMultipleImages = (event) => {
+    this.setState({ datareceived: false });
+    this.setState({ isLoading: true });
     addMultipleImages(event.target.files)
       .then((res) => {
         console.log(res);
@@ -152,7 +158,8 @@ class EditVan extends React.Component {
               onChange={this.handleMultipleImages}
               placeholder="Update images of your van"
             />
-            <button className="signupbutton" type="submit">
+            {this.state.isLoading && <div>Images loading....</div>}
+            <button className="signupbutton" type="submit" disabled={!this.state.datareceived}>
               {" "}
               Save changes{" "}
             </button>

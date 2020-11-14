@@ -148,7 +148,7 @@ class NewVanForm extends React.Component {
               multiple
               onChange={this.handleMultipleImages}
             />
-            {this.state.isLoading && <div>Image loading....</div>}
+            {this.state.isLoading && <div>Images loading....</div>}
             <button
               className="signupbutton"
               type="submit"

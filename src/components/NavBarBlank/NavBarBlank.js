@@ -7,7 +7,7 @@ const NavBarBlank = () => {
     <div>
     <Route>
         <nav className="nav-bar-blank">
-        <Link to={"/"} style={{'textDecoration':'none', 'color':'white'}}><img className="vanlogo" src='/VanSwapLogo.svg' alt="Van Swap Logo"/></Link>
+        <Link to={"/"} style={{'textDecoration':'none', 'color':'white'}}><img className="campervanlogo" src='/VanSwapLogo.svg' alt="Van Swap Logo"/></Link>
         </nav>
     </Route>
     </div>

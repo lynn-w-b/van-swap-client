@@ -1,16 +1,16 @@
 .login {
   /* background-color: #F9FAE3; */
-  background-image: url('/orangecampervan3.jpg');
+  background-image: url("/orangecampervan3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  max-height: 100vh;
+  max-height: 92vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 .loginform {
-    height: 75vh;
+  height: 75vh;
   width: auto;
   background-color: #4f4f4f;
   color: #f2994a;
@@ -61,6 +61,8 @@
   border-radius: 0.75em;
 }
 .logo {
-  /* border: solid 0.5em #f2994a;
-  border-radius: 0.75em; */
+  border: solid 0.5em #f2994a;
+  border-radius: 0.75em;
+  height: 50vh;
+  width: 18.7vw;
 }
