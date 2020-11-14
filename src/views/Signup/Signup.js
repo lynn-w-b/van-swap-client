@@ -79,7 +79,7 @@ class Signup extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="signuppage">
         <NavBarBlank></NavBarBlank>
         <div className="titlecontainer">
           <h1>Your Profile</h1>

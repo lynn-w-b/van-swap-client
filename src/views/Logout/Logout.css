@@ -1,5 +1,11 @@
 .exittext {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.5em;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 3em;
     text-align: center;
+    margin-top: 2vh;
+}
+.background {
+    background-image: url('/orangecampervan.svg'); 
+    background-repeat: no-repeat;
+    background-size: 75%; 
 }

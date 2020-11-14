@@ -55,8 +55,9 @@ class Login extends React.Component {
     return (
       <div>
         <div className="login">
-          {errorMessage !== "" && errorMessage}
           <form className="loginform" onSubmit={this.handleSubmit}>
+          {errorMessage !== "" && errorMessage}
+          <img className="logo" src="/VanSwapLogo.svg" alt=""/>
             <label className="loginlabel">Email </label>
             <input
               className="logininput"
@@ -88,7 +89,10 @@ class Login extends React.Component {
                   textAlign: "center",
                 }}
               >
-                Back
+              <button className="gobackbutton" type="submit">
+              {" "}
+              Back{" "}
+            </button>
               </Link>
             </Route>
           </form>

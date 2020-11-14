@@ -1,0 +1,46 @@
+.email {
+    color: teal;
+}
+.declinebutton {
+    background-color:red;
+    color: white;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 1em;
+    /* padding: 1em 1em 2.5em 1em; */
+    border: solid 0.3em white;
+    border-radius: 0.75em;
+    width: 25vw;
+    height: 8vh;
+}
+.big {
+    font-size: 3em;
+}
+.centred {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.teal {
+    background-color: teal;
+    color: white;
+    border: solid 0.3em white;
+    border-radius: 0.75em;
+    padding: 1em;
+}
+.swapdetails {
+    background-image: url('/bluecampervan2.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}
+.backyougobutton {
+    background-color: #f9fae3;
+    color: #4f4f4f;
+    font-family: "Permanent Marker", cursive;
+    font-size: 1.5em;
+    width: 8vw;
+    padding: 1em;
+    border: solid 0.3em #4f4f4f;
+    border-radius: 0.75em;
+    margin-left: 45vw;
+    margin-bottom: 2vh;
+  }

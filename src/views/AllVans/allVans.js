@@ -51,7 +51,7 @@ class AllVans extends React.Component {
     ));
 
     return (
-      <div>
+      <div className="allvans">
         <NavBar
           button1="My Profile"
           link1="/"
@@ -60,8 +60,10 @@ class AllVans extends React.Component {
           button3="Log-out"
           link3="/logout"
         ></NavBar>
-        <div className="titlecontainer">
+        <div className="titlecontainer spreadout">
           <h1 className="searchTitle">Search Vans</h1>
+          <img className="sun" src="/sun.svg" alt=""/>
+          <p className="funky">(for your next holiday!!)</p>
           <label className="searchLabel" htmlFor="search">
             Search by location
           </label>

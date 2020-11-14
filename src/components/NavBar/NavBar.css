@@ -6,27 +6,37 @@
     justify-content: space-around;
 }
 .mainnavimage {
-    border: none;
-    margin-top: 0.7em;
+    border: solid 0.3em #F2994a;
+    border-radius: 0.75em;
+    margin-top: 2em;
+    margin-left: 8vw;
+    width: 20vw;
 }
 
 .mainnavbutton {
     background-color:#F2994A;
-    color: white;
+    color: #4f4f4f;
     font-family: 'Permanent Marker', cursive;
-    font-size: 1.5em;
+    font-size: 2em;
     padding: 1em 1em 1em 1em;
     margin: 2em;
-    border: solid 0.3em #F2994A;
+    border: solid 0.3em #4f4f4f;
     border-radius: 0.75em;
+    width: 10vw;
+    height: 15vh;
 }
 .endnavbutton {
     background-color:#4F4F4F;
     color: white;
     font-family: 'Permanent Marker', cursive;
-    font-size: 1.5em;
+    font-size: 2em;
     padding: 1em 1em 1em 1em;
     margin: 2em;
-    border: solid 0.3em #4F4F4F;
+    border: solid 0.3em #F2994A;
     border-radius: 0.75em;
+    width: 10vw;
+    height: 15vh;
+}
+.buttonplace {
+    margin-right: 7vw;
 }

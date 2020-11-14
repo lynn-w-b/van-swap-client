@@ -28,13 +28,23 @@ class VanView extends React.Component {
             style={{ textDecoration: "none", color: "white" }}
             onClick={this.onClickHandler}
           >
-            <div className="vanviewbox">
-              <p>Make: {make && this.state.make}</p>
-              <p>Model: {model && this.state.model}</p>
-              <p>Year: {year && this.state.year}</p>
-              <p>Location: {location && this.state.location}</p>
-              <img src={image && this.state.image} alt="" />
-            </div>
+          <div className="vanviewbox">
+            <div class="panel panel-warning">
+  <div class="panel-heading centred">
+    <h3 class="panel-title">{location && this.state.location}</h3>
+  </div>
+  <div class="panel-body spreadout">
+  <div className="largefont">
+  <p>{make && this.state.make}</p>
+              <p>{model && this.state.model}</p>
+              <p>{year && this.state.year}</p>
+              </div>
+              <div>
+              <img className="photo" src={image && this.state.image} alt="" />
+              </div>
+  </div>
+</div>
+</div>
           </Link>
         </Route>
       </div>

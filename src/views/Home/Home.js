@@ -67,7 +67,7 @@ class Home extends React.Component {
       );
     });
     return (
-      <div>
+      <div className="home">
         <NavBar
           button1="My Van"
           link1="/myvan"
@@ -77,7 +77,9 @@ class Home extends React.Component {
           link3="/logout"
         ></NavBar>
         <div className="titlecontainer">
-          <h1>My Profile</h1>
+        <h1>My Profile</h1>
+          <img className="boy" src="/boy.svg" alt=""/>
+          <p>(all about you!)</p>
           <Route>
             <Link
               to={"/editprofile"}
@@ -89,22 +91,67 @@ class Home extends React.Component {
             </Link>
           </Route>
         </div>
+
         <div className="textbox">
-          <p>Name: {fullname && this.props.user.fullname}</p>
-          <p>DOB: {dateofbirth && this.props.user.dateofbirth}</p>
-          <p>Location: {location && this.props.user.location}</p>
-          <p>Details: {about && this.props.user.about}</p>
-          <img src={image && this.props.user.image} alt="van" />
-        </div>
-        <div className="titlecontainer">
-          <h1>Swap Requests Received</h1>
-        </div>
-        {swapgotdetails}
-        <div className="titlecontainer">
-          <h1>Swap Requests Sent</h1>
-        </div>
-        {swapdetails}
-        <Footer></Footer>
+          <div className="panel panel-warning">
+            <div className="panel-heading">
+              <h3 className="panel-title">Details</h3>
+            </div>
+            <div className="panel-body">
+              <div className="first-panel">
+                <div>
+                  <p>{fullname && this.props.user.fullname}</p>
+                  <p>{dateofbirth && this.props.user.dateofbirth}</p>
+                  <p>{location && this.props.user.location}</p>
+                </div>
+                <div>
+                  <div>
+                    <p className="handwriting">This is you, say "Cheese"!</p>
+                  </div>
+                  <div>
+                    <img
+                      className="arrow"
+                      src="/hand-drawn-arrow-1-300x276.png"
+                      alt=""
+                    />
+                    <img
+                      className="photo"
+                      src={image && this.props.user.image}
+                      alt="van"
+                    />
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+              <div className="panel panel-warning">
+                <div className="panel-heading">
+                  <h3 className="panel-title">About</h3>
+                </div>
+                <div className="panel-body">
+                  <p>{about && this.props.user.about}</p>
+                </div>
+              </div>
+            </div>
+          <div className="titlecontainer">
+            <h1>Swap Requests Received</h1>
+          </div>
+          {this.state.swapsgot.length <= 0 && (
+            <div className="swapviewbox">
+            <p className="handwriting">No swaps yet....</p>
+            </div>
+          )}
+          {swapgotdetails}
+          <div className="titlecontainer">
+            <h1>Swap Requests Sent</h1>
+          </div>
+          {this.state.swaps.length <= 0 && (
+            <div className="swapviewbox">
+            <p className="handwriting">No swaps yet....</p>
+            </div>
+          )}
+          {swapdetails}
+          <Footer></Footer> 
       </div>
     );
   }

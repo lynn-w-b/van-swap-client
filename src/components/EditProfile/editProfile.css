@@ -1,0 +1,17 @@
+input {
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 2em;
+    color: #f2994a;
+    padding-left: 2vw;
+}
+textarea {
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 2em;
+    color: #f2994a;
+    padding-left: 2vw;
+}
+.editprofile {
+    background-image: url('/orangecampervan.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}

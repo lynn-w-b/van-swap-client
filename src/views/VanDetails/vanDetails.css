@@ -1,5 +1,34 @@
-.alice-carousel ul li img {
-  height: 400px;
-  width: 100%;
-  object-fit: cover;
+.book {
+    width: 3vw;
+}
+.backbutton {
+    background-color:#F2994A;
+    color: #4f4f4f;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    padding: 1em 1em 1em 1em;
+    margin: 2em;
+    border: solid 0.3em #4f4f4f;
+    border-radius: 0.75em;
+    width: 8vw;
+    height: 13vh;
+    margin-left: 60vw;
+}
+.swapbutton {
+    width: 8vw;
+    height: 12vh;
+    padding: 0.2em;
+    border: dotted teal 1em;
+    border-radius: 0.75em;
+    position: absolute;
+    right: 15vw;
+    top: 31vh;
+    background: #F2994A;
+    color:white;
+    box-shadow: 5px 5px teal;
+}
+.vandetails {
+    background-image: url('/multivan.jpg');
+  background-repeat: repeat;
+  background-size: cover;
 }

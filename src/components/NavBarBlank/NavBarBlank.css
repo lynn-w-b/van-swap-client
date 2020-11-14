@@ -1,12 +1,15 @@
 .nav-bar-blank {
-    background-color: #F9FAE3;
+    /* background-color: #F9FAE3; */
     width: 100vw;
     height: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-img {
-    width: 15vw;
+.vanlogo {
+    border: solid 0.3em #F2994a;
+    border-radius: 0.75em;
+    margin-top: 2vh;
+    width: 25vw;
 }
 

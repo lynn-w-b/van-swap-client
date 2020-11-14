@@ -73,7 +73,7 @@ class EditProfile extends React.Component {
       errorMessage,
     } = this.state;
     return (
-      <div>
+      <div className="editprofile">
         <NavBar
           button1="Back"
           link1="/"

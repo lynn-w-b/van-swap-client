@@ -30,10 +30,12 @@ class Swapgot extends React.Component {
     } = this.state;
     const { startdate, enddate } = this.props;
     let button;
-    if(this.state.accepted) {
-        button = <button>Request Accepted</button>
+    if(this.state.decision === "Pending Approval" || !this.state.decision) {
+        button = <button className="pendingbutton">Pending Approval</button>
+    } else if(this.state.decision === "Accepted"){
+        button = <button className="acceptbutton">Accepted</button>
     } else {
-        button = <button>Request Pending Approval</button>
+        button = <button classname="declinebutton">Declined</button>
     }
     return (
       <div>
@@ -42,17 +44,17 @@ class Swapgot extends React.Component {
             to={`/swapdetails/${this.props.id}`}
             style={{ textDecoration: "none", color: "white" }}
           >
-            <div className="vanviewbox">
-              <p>
-                Your van has been requested from:{" "}
-                {startdate && this.props.startdate} until:{" "}
+            <div className="swapviewbox">
+              <p className="swaptext">
+                Your van has been requested <span>from</span>{" "}
+                {startdate && this.props.startdate} <span>until</span>{" "}
                 {enddate && this.props.enddate}
               </p>
-              <p>
-                By: {requestername && this.state.requestername} From:{" "}
+              <p className="swaptext">
+                <span>By</span> {requestername && this.state.requestername} <span>from</span>{" "}
                 {requesterlocation && this.state.requesterlocation}
               </p>
-              <p>Status: {button}</p>
+              <p className="swaptext"><span>Status</span> {button}</p>
             </div>
           </Link>
         </Route>

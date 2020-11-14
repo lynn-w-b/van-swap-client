@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import { vandetails } from "../../services/vanService";
+import './swap.css';
 
 class Swap extends React.Component {
   state = {
@@ -9,7 +10,7 @@ class Swap extends React.Component {
     year: "",
     location: "",
     ownername: "",
-    accepted: this.props.accepted,
+    decision: this.props.decision,
   };
 
   componentDidMount = () => {
@@ -33,10 +34,12 @@ class Swap extends React.Component {
       const {make, model, year, location, ownername} = this.state;
       const {startdate, enddate} = this.props;
       let button;
-    if(this.state.accepted) {
-        button = <button>Request Accepted</button>
+      if(this.state.decision === "Pending Approval" || !this.state.decision) {
+        button = <button className="pendingbutton">Pending Approval</button>
+    } else if(this.state.decision === "Accepted"){
+        button = <button className="acceptbutton">Accepted</button>
     } else {
-        button = <button>Request Pending Approval</button>
+        button = <button classname="declinebutton">Declined</button>
     }
     return (
       <div>
@@ -45,18 +48,45 @@ class Swap extends React.Component {
             to={`/swapdetails/${this.props.id}`}
             style={{ textDecoration: "none", color: "white" }}
           >
-            <div className="vanviewbox">
-              <p>
-                Van requested: {make && this.state.make} {model && this.state.model}{" "}
-                {year && this.state.year} located in: {location && this.state.location}
+            <div className="swapviewbox">
+              <div className="panel panel-warning">
+            <div className="panel-heading">
+              <h3 className="panel-title">Van details</h3>
+            </div>
+            <div className="panel-body">
+            <p className="swaptext">{make && this.state.make} {model && this.state.model}{" "}
+                {year && this.state.year}<span> located in</span> {location && this.state.location}
               </p>
-              <p>
-                Requested from: {startdate && this.props.startdate} until:{" "}
+            </div>
+          </div>
+          <div className="panel panel-warning">
+            <div className="panel-heading">
+              <h3 className="panel-title">Dates</h3>
+            </div>
+            <div className="panel-body">
+            <p className="swaptext">
+                <span>Requested from</span> {startdate && this.props.startdate} <span>until</span>{" "}
                 {enddate && this.props.enddate}
               </p>
-              <p>Van owner: {ownername && this.state.ownername}</p>
-              <p>Status: {button}</p>
             </div>
+          </div>
+          <div className="panel panel-warning">
+            <div className="panel-heading">
+              <h3 className="panel-title">Van Owner</h3>
+            </div>
+            <div className="panel-body">
+            <p className="swaptext">{ownername && this.state.ownername}</p>
+            </div>
+          </div> 
+          <div className="panel panel-warning">
+            <div className="panel-heading">
+              <h3 className="panel-title">Status</h3>
+            </div>
+            <div className="panel-body">
+            <p className="swaptext"><span>Status</span> {button}</p>
+            </div>
+          </div> 
+          </div> 
           </Link>
         </Route>
       </div>

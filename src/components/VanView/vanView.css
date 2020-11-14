@@ -1,6 +1,6 @@
 .vanviewbox {
-    width: 71.5vw;
-    height: 75vh;
+    width: 74vw;
+    height: auto;
     margin-left: 9.5vw;
     margin-top: 2vh;
     background-color:white;
@@ -9,4 +9,15 @@
     border: solid 2em #F2994A;
     border-radius: 0.75em;
     text-align: left;
+}
+.spreadout {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.centred {
+    text-align: center;
+}
+.largefont {
+    font-size: 1.2em;
 }

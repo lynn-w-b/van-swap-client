@@ -2,6 +2,7 @@ import React from "react";
 import { createswap } from "../../services/vanService";
 import NavBarBlank from "../../components/NavBarBlank/NavBarBlank";
 import Footer from "../../components/Footer/Footer";
+import'./swapRequest.css';
 
 class SwapRequest extends React.Component {
   constructor(props) {
@@ -55,10 +56,11 @@ class SwapRequest extends React.Component {
   render() {
     const { startdate, enddate, additionalInfo, errorMessage } = this.state;
     return (
-      <div>
+      <div className="swaprequest">
         <NavBarBlank></NavBarBlank>
         <div className="titlecontainer">
           <h1>Swap Request</h1>
+          <p>Well this is exciting....fingers crossed!</p>
         </div>
         <div className="signup">
           {errorMessage !== "" && errorMessage}

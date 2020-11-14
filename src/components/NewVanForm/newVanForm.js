@@ -85,7 +85,7 @@ class NewVanForm extends React.Component {
     console.log(this.props);
     const { make, model, year, location, about, errorMessage } = this.state;
     return (
-      <div>
+      <div className="signuppage">
         <NavBarBlank></NavBarBlank>
         <div className="titlecontainer">
           <h1>New Van</h1>

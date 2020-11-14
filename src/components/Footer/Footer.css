@@ -1,8 +1,8 @@
 footer {
     background-color: #4F4F4F;
     color: #F2994A;
-    font-family: 'PT Sans', sans-serif;
-    height: 20vh;
+    font-family: 'Just Me Again Down Here', cursive;
+    height: 15vh;
     text-align: center;
   }
   
@@ -10,6 +10,7 @@ footer {
     color: greenyellow;
   }
   footer p {
-    padding-top: 1.5em;
+    padding-top: 1em;
+    font-family: 'Just Me Again Down Here', cursive;
   }
   

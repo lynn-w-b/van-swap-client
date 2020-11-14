@@ -1,0 +1,23 @@
+.imagesliderbox {
+    display:flex;
+    justify-content: center;
+    padding: 2em;
+}
+.imageslidercomp {
+    margin: 5em;
+}
+.campervan {
+    width: 3vw;
+}
+.titlecontainer p {
+    font-family: 'Just Me Again Down Here', cursive;
+    color: #F2994A;
+    font-size: 3em;
+    margin-left: 1vw;
+    margin-top: 3vh;
+}
+.myvan {
+    background-image: url('/yellowcampervan.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}

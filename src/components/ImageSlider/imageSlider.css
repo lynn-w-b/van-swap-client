@@ -1,0 +1,18 @@
+.imagebutton {
+    background-color: #4f4f4f;
+    color: #f2994a;
+    font-family: "Permanent Marker", cursive;
+    font-size: 3em;
+    width: 5vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border: solid 0.3em #4f4f4f;
+    border-radius: 0.75em;
+}
+.imageslider {
+    width: auto;
+    max-width: 45vw;
+    height: 50vh;
+    border: solid #4f4f4f 1em;
+    border-radius: 0.75em;
+}

@@ -26,14 +26,18 @@ class Logout extends React.Component {
     console.log(this.props);
     const {errorMessage} = this.state;
     return (
-      <div>
+      <div className="background">
       <div className="login">
-        {errorMessage !== "" && errorMessage}
         <form className="loginform" onSubmit={this.handleSubmit}>
+        <img className="logo" src="/VanSwapLogo.svg" alt=""/>
+        {errorMessage !== "" && errorMessage}
           <p className="exittext">Are you sure you would like to log-out?</p>
           <button className="loginbutton" type="submit"> Log-out </button>
           <Route>
-          <Link to={"/"} style={{'textDecoration':'none', 'color':'white', 'textAlign':'center'}}>Back</Link>
+          <Link to={"/"} style={{'textDecoration':'none', 'color':'white', 'textAlign':'center'}}><button className="gobackbutton" type="submit">
+              {" "}
+              Back{" "}
+            </button></Link>
           </Route>
         </form>
         </div>

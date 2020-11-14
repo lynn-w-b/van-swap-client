@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './imageSlider.css';
 
 const ImageSlider = ({ images }) => {
   // takes in images as props
@@ -20,9 +21,9 @@ const ImageSlider = ({ images }) => {
   return (
     images.length > 0 && (
       <div>
-        <button onClick={slideLeft}>{"<"}</button>
-        <img src={images[index]} alt={index} />
-        <button onClick={slideRight}>{">"}</button>
+        <button className="imagebutton" onClick={slideLeft}>{"<"}</button>
+        <img className="imageslider" src={images[index]} alt={index} />
+        <button className="imagebutton" onClick={slideRight}>{">"}</button>
       </div>
     )
   );

@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import "./myVan.css";
 import { getvan } from "../../services/vanService";
+import ImageSlider from "../../components/ImageSlider/imageSlider";
 
 class MyVan extends React.Component {
   constructor(props) {
@@ -37,11 +38,8 @@ class MyVan extends React.Component {
   };
 
   render() {
-    const images = this.state.images.map((image) => {
-      return <img src={image} alt="" rounded />;
-    });
     return (
-      <div>
+      <div className="myvan">
         <NavBar
           button1="My Profile"
           link1="/"
@@ -52,6 +50,8 @@ class MyVan extends React.Component {
         ></NavBar>
         <div className="titlecontainer">
           <h1>My Van</h1>
+          <img className="campervan" src="/campervan.svg" alt=""/>
+          <p>(your pride and joy!)</p>
           <Route>
             <Link
               to={"/editvan"}
@@ -64,12 +64,35 @@ class MyVan extends React.Component {
           </Route>
         </div>
         <div className="textbox">
-          <p>Make: {this.state.make}</p>
-          <p>Model: {this.state.model}</p>
-          <p>Year: {this.state.year}</p>
-          <p>Location: {this.state.location}</p>
-          <p>Details: {this.state.about}</p>
-          {images}
+        <div className="panel-body">
+        <div className="panel panel-warning">
+  <div className="panel-heading">
+    <h3 className="panel-title">Images</h3>
+  </div>
+  <div className="imagesliderbox">
+  <ImageSlider className="imageslidercomp" images={this.state.images} />
+  </div>
+  </div>
+        <div className="panel panel-warning">
+  <div className="panel-heading">
+    <h3 className="panel-title">Van</h3>
+  </div>
+  <div className="panel-body">
+  <p>{this.state.make}</p>
+          <p>{this.state.model}</p>
+          <p>{this.state.year}</p>
+          <p>{this.state.location}</p>
+  </div>
+</div>
+<div className="panel panel-warning">
+  <div className="panel-heading">
+    <h3 className="panel-title">Details</h3>
+  </div>
+  <div className="panel-body">
+  <p>{this.state.about}</p>
+  </div>
+  </div>     
+        </div>
         </div>
         <Footer></Footer>
       </div>

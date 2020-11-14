@@ -18,7 +18,7 @@ class VanDetails extends React.Component {
     details: "",
     ownerId: "",
     image: "",
-    id: localStorage.getItem("van_id")
+    id: localStorage.getItem("van_id"),
   };
 
   componentDidMount = () => {
@@ -58,7 +58,7 @@ class VanDetails extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="vandetails">
         <NavBar
           button1="My Profile"
           link1="/"
@@ -70,31 +70,101 @@ class VanDetails extends React.Component {
         <Route>
           <div className="titlecontainer">
             <h1>Van Details</h1>
+            <img
+              className="book"
+              src="/abc-educational-book-hand-drawn-toy.svg"
+              alt=""
+            />
+            <p>Everything you always wanted to know....</p>
             <Link
               to={`/swaprequest/${this.state.id}`}
               style={{ textDecoration: "none", color: "white" }}
               onClick={this.onClickHandler}
             >
-              <button className="editbutton" type="submit">
+              <button className="swapbutton" type="submit">
                 Make A Swap Request
               </button>
             </Link>
           </div>
           <div className="textbox">
-            <p>Make: {this.state.make}</p>
-            <p>Model: {this.state.model}</p>
-            <p>Year: {this.state.year}</p>
-            <p>Location: {this.state.location}</p>
-            <p>Details: {this.state.about}</p>
-            <ImageSlider images={this.state.images} />
-            <p>Owner: {this.state.fullname}</p>
-            <p>About the owner: {this.state.details}</p>
-            <img src={this.state.image} alt="" />
+            <div className="panel panel-warning">
+              <div className="panel-heading">
+                <h3 className="panel-title">Images</h3>
+              </div>
+              <div className="panel-body">
+                <div className="imagesliderbox">
+                  <ImageSlider images={this.state.images} />
+                </div>
+              </div>
+            </div>
+            <div className="panel panel-warning">
+              <div className="panel-heading">
+                <h3 className="panel-title">Van Details</h3>
+              </div>
+              <div className="panel-body">
+                <p>{this.state.make}</p>
+                <p>{this.state.model}</p>
+                <p>{this.state.year}</p>
+              </div>
+            </div>
+            <div className="panel panel-warning">
+              <div className="panel-heading">
+                <h3 className="panel-title">Location</h3>
+              </div>
+              <div className="panel-body">
+                <p>{this.state.location}</p>
+              </div>
+            </div>
+            <div className="panel panel-warning">
+              <div className="panel-heading">
+                <h3 className="panel-title">About This Van...</h3>
+              </div>
+              <div className="panel-body">
+                <p>{this.state.about}</p>
+              </div>
+            </div>
+            <div className="panel panel-warning">
+              <div className="panel-heading">
+                <h3 className="panel-title">Van Owner</h3>
+              </div>
+              <div className="panel-body">
+                <p>{this.state.fullname}</p>
+              </div>
+            </div>
+            <div className="panel panel-warning">
+              <div className="panel-heading">
+                <h3 className="panel-title">About the owner...</h3>
+              </div>
+              <div className="panel-body">
+                <div className="first-panel">
+                  <div>
+                    <p>{this.state.details}</p>
+                  </div>
+                  <div>
+                    <div>
+                      <p className="handwriting">This is the proud owner!</p>
+                    </div>
+                    <div>
+                      <img
+                        className="arrow"
+                        src="/hand-drawn-arrow-1-300x276.png"
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <img className="photo" src={this.state.image} alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <Link
               to={"/allvans"}
               style={{ textDecoration: "none", color: "white" }}
             >
-              <button type="submit">Back</button>
+              <button className="backbutton" type="submit">
+                Back
+              </button>
             </Link>
           </div>
         </Route>

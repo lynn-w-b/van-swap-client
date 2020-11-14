@@ -1,0 +1,38 @@
+.swapviewbox {
+  width: 74vw;
+  height: auto;
+  margin-left: 12vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  background-color: white;
+  color: #4f4f4f;
+  padding: 1em;
+  border: solid 2em #f2994a;
+  border-radius: 0.75em;
+  text-align: left;
+}
+.swaptext span {
+  color: teal;
+}
+.acceptbutton {
+    background-color:#01FF70;
+    color: #4f4f4f;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 1em;
+    /* padding: 1em 1em 2.5em 1em; */
+    border: solid 0.3em white;
+    border-radius: 0.75em;
+    width: 25vw;
+    height: 8vh;
+}
+.pendingbutton {
+    background-color:#B10DC9;
+    color: white;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 1em;
+    /* padding: 1em 1em 2.5em 1em; */
+    border: solid 0.3em white;
+    border-radius: 0.75em;
+    width: 25vw;
+    height: 8vh;
+}

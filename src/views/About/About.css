@@ -1,7 +1,8 @@
 .textbox {
-    width: 71.5vw;
-    height: 75vh;
+    width: 74vw;
+    height: auto;
     margin-left: 11.5vw;
+    margin-bottom: 5vh;
     background-color:white;
     color: #4f4f4f;
     padding: 1em;

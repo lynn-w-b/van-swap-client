@@ -86,7 +86,7 @@ class EditVan extends React.Component {
   render() {
     const { make, model, year, location, about, errorMessage } = this.state;
     return (
-      <div>
+      <div className="myvan">
         <NavBar
           button1="Back"
           link1="/myvan"

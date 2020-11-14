@@ -15,7 +15,7 @@ const Splash = () => {
         </div>
       </nav>
     </Route>
-    <div>
+    <div className="splash-image">
         <img className="splash-image" src='/VanSwapLogo.svg' alt="Van Swap Logo"/>
     </div>
     <Footer></Footer>
