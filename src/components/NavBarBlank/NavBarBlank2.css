@@ -1,0 +1,16 @@
+@media (min-width: 768px) {
+    .nav-bar-blank {
+        /* background-color: #F9FAE3; */
+        width: 100vw;
+        height: 20vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 20vh;
+      }
+      .campervanlogo {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        width: 75vw;
+      }
+      }

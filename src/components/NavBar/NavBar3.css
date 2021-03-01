@@ -1,0 +1,49 @@
+@media (min-width: 1024px) {
+    .mainnav {
+        width: 100vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+       align-items: center;
+       margin-bottom: 8vh;
+    }
+    .mainnavimage {
+        margin-top: 2vh;
+        margin-left: 2vw;
+        width: 45vw;
+        padding: 1em;
+    }
+    .firstnavbutton {
+        background-color:#F2994A;
+        color: #4f4f4f;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 1.5em;
+        padding: 0.5em;
+        width: 25vw;
+        height: 8vh;
+        margin-top: 2vh;
+    }
+    .mainnavbutton {
+        background-color:#F2994A;
+        color: #4f4f4f;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 1.5em;
+        padding: 0.5em;
+        width: 25vw;
+        height: 8vh;
+        margin-top: 2vh;
+    }
+    .endnavbutton {
+        background-color:#4F4F4F;
+        color: white;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 1.5em;
+        padding: 0.5em;
+        width: 25vw;
+        height: 8vh;
+        margin-top: 2vh;
+    }
+    .buttonplace {
+        margin-right: 2vw;
+    }
+    }

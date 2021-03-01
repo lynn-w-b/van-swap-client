@@ -1,0 +1,14 @@
+@media (min-width: 320px) {
+.textbox {
+    width: 85vw;
+    height: 40vh;
+    margin-left: 7vw;
+    margin-bottom: 5vh;
+    background-color:white;
+    color: #4f4f4f;
+    padding: 1em;
+    border: solid 0.3em #F2994A;
+    text-align: left;
+    font-size: 10px;
+}
+}

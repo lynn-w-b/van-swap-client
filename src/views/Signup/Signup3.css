@@ -1,0 +1,83 @@
+@media (min-width: 1024px) {
+body {
+    background-color: #f9fae3;
+  }
+  .signup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .titlecontainer {
+    background-color: #4f4f4f;
+    color: white;
+    font-family: "Permanent Marker", cursive;
+    font-size: 0.1em;
+    text-align: center;
+    padding-bottom: 1em;
+    width: 85vw;
+    margin-top: 0.5em;
+    margin-left: 7vw;
+    margin-bottom: 2vh;
+  }
+  .signupform {
+    width: 75vw;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    background-color: white;
+    color: #4f4f4f;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+  .signuplabel {
+    font-family: "PT Sans", sans-serif;
+    font-size: 2em;
+    text-align: left;
+    padding-bottom: 0.5em;
+    padding-top: 0;
+  }
+  
+  .signupinput {
+    color: #4f4f4f;
+    width: 65vw;
+    height: 5vh;
+    margin-left: 2vw;
+    margin-bottom: 0.5em;
+    border: solid 0.2em #f2994a;
+  }
+  
+  .signuptextarea {
+    color: #4f4f4f;
+    width: 65vw;
+    margin-left: 2vw;
+    margin-bottom: 0.5em;
+    border: solid 0.2em #f2994a;
+  }
+  .signupbutton {
+    background-color: #4f4f4f;
+    color: teal;
+    font-family: "Permanent Marker", cursive;
+    font-size: 1.5em;
+    width: 50vw;
+    margin-top: 1em;
+    margin-left: 10vw;
+    padding: 1em;
+    border: solid 0.2em #4f4f4f;
+  }
+  button[disabled] {
+    background-color: #4f4f4f;
+    color: #4f4f4f;
+    font-family: "Permanent Marker", cursive;
+    font-size: 1.5em;
+    width: 50vw;
+    margin-top: 1em;
+    margin-left: 10vw;
+    padding: 1em;
+    border: solid 0.2em #4f4f4f;
+  }
+  .signuppage {
+    background-image: url('/bluecampervan2.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+  }
+}

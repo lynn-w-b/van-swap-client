@@ -1,3 +1,4 @@
+@media (min-width: 320px) {
 .splash-nav {
   background-color: #f2994a;
   width: 100vw;
@@ -11,11 +12,10 @@ nav button {
   background-color: #4f4f4f;
   color: white;
   font-family: "Permanent Marker", cursive;
-  font-size: 1.5em;
-  padding: 1vh 2vw 2.5vh 2.5vw;
-  margin: 4vh 2vw 2vh 2vw;
-  border: solid 0.3em #f9fae3;
-  border-radius: 0.75em;
+  font-size: 1em;
+  width: 25vw;
+  padding: 2.5vh 2vw 2.5vh 2.5vw;
+  margin: 3vh 2vw 2vh 2vw;
 }
 .splash-image {
   display: flex;
@@ -27,9 +27,8 @@ nav button {
   height: 75vh;
 }
 .splash-image img {
-  height: 39.7vh;
-  border: solid 0.3em #4f4f4f;
-  border-radius: 0.75em;
+  height: 35vh;
   margin-top: 15vh;
-  width: 34vw;
+  width: 85vw;
+}
 }

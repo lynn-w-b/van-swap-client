@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Link} from 'react-router-dom';
-import './NavBarBlank.css';
+import './NavBarBlank1.css';
+import './NavBarBlank2.css';
+import './NavBarBlank3.css';
 
 const NavBarBlank = () => {
   return (

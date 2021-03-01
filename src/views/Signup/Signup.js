@@ -2,7 +2,9 @@ import React from "react";
 import { signup } from "../../services/userService";
 import NavBarBlank from "../../components/NavBarBlank/NavBarBlank";
 import Footer from "../../components/Footer/Footer";
-import "./Signup.css";
+import "./Signup1.css";
+import "./Signup2.css";
+import "./Signup3.css";
 import { uploadImage } from "../../services/userService";
 
 class Signup extends React.Component {

@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Link} from 'react-router-dom';
-import './NavBar.css';
+import './NavBar1.css';
+import './NavBar2.css';
+import './NavBar3.css';
 
 
 const NavBar = (props) => {

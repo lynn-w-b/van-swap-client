@@ -1,7 +1,10 @@
 import React from "react";
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
-import './About.css';
+import './About1.css';
+import './About2.css';
+import './About3.css';
+
 
 const About = () => {
   return (

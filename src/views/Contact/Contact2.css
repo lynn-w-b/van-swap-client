@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+    .sendbutton {
+        background-color:#4F4F4F;
+        color: white;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 1.5em;
+        padding: 1em 1em 1em 1em;
+        margin-top: 38vw;
+        margin-left: 73vw;
+    }
+    }  

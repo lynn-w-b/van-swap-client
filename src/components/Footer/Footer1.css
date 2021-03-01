@@ -1,3 +1,4 @@
+@media (min-width: 320px) {
 footer {
     background-color: #4F4F4F;
     color: #F2994A;
@@ -10,8 +11,9 @@ footer {
     color: greenyellow;
   }
   footer p {
-    padding-top: 1em;
+    padding-top: 2.5vh;
     font-family: 'Just Me Again Down Here', cursive;
+    font-size: 1em;
     
   }
-  
+}

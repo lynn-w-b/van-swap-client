@@ -1,3 +1,4 @@
+@media (min-width: 320px) {
 .nav-bar-blank {
   /* background-color: #F9FAE3; */
   width: 100vw;
@@ -5,11 +6,11 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 12vh;
 }
 .campervanlogo {
-  border: solid 0.3em #f2994a;
-  border-radius: 0.75em;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  width: 20.7vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 75vw;
+}
 }

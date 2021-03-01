@@ -1,0 +1,34 @@
+@media (min-width: 1024px) {
+    .splash-nav {
+      background-color: #f2994a;
+      width: 100vw;
+      height: 15vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    
+    nav button {
+      background-color: #4f4f4f;
+      color: white;
+      font-family: "Permanent Marker", cursive;
+      font-size: 2.5em;
+      width: 25vw;
+      padding: 2.5vh 4vw 2.5vh 4vw;
+      margin: 3vh 3vw 3vh 3vw;
+    }
+    .splash-image {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      background-image: url("/greencampervan.jpg");
+      background-repeat: repeat;
+      background-size: cover;
+      height: 75vh;
+    }
+    .splash-image img {
+      height: 65vh;
+      margin-top: 5vh;
+      width: 85vw;
+    }
+    }

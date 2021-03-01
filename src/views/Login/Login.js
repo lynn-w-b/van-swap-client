@@ -2,7 +2,9 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import { login } from "../../services/userService";
 import Footer from "../../components/Footer/Footer";
-import "./Login.css";
+import "./Login1.css";
+import "./Login2.css";
+import "./Login3.css";
 
 class Login extends React.Component {
   state = {

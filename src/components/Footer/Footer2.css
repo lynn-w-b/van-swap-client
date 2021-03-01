@@ -1,0 +1,18 @@
+@media (min-width: 768px) {
+    footer {
+        background-color: #4F4F4F;
+        color: #F2994A;
+        font-family: 'Just Me Again Down Here', cursive;
+        height: 15vh;
+        text-align: center;
+      }
+      
+      footer span {
+        color: greenyellow;
+      }
+      footer p {
+        padding-top: 2em;
+        font-family: 'Just Me Again Down Here', cursive;
+        font-size: 1.5em;
+      }
+}
